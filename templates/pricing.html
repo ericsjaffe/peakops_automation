@@ -1,0 +1,77 @@
+
+{% extends "base.html" %}
+{% block content %}
+<section class="section">
+  <div class="container">
+    <h1>Pricing</h1>
+    <p class="lead">
+      Flexible plans for everything from a few focused wins to a dedicated productivity and automation partner.
+    </p>
+
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h2>Essentials Productivity</h2>
+        <p class="price">$199<span>/month</span></p>
+        <p class="desc">For freelancers, consultants, and small teams.</p>
+        <ul>
+          <li>Up to <strong>2 tasks per month</strong></li>
+          <li>Examples: Excel cleanup, quick automations, report templates</li>
+          <li>Email support</li>
+          <li>Typical turnaround: 72 hours</li>
+          <li>Quarterly mini process review</li>
+          <li>Access to starter templates</li>
+        </ul>
+      </div>
+
+      <div class="pricing-card featured">
+        <h2>Operational Efficiency</h2>
+        <p class="price">$499<span>/month</span></p>
+        <p class="desc">For managers and growing teams that want consistent improvements.</p>
+        <ul>
+          <li>Up to <strong>6 tasks per month</strong></li>
+          <li>One <strong>custom automation or workflow</strong> per month</li>
+          <li>Typical turnaround: 24–48 hours</li>
+          <li>Monthly process &amp; productivity review call (30 mins)</li>
+          <li>SOP / documentation for major automations</li>
+          <li>Priority support queue</li>
+        </ul>
+      </div>
+
+      <div class="pricing-card">
+        <h2>Enterprise Productivity Partner</h2>
+        <p class="price">$1,200<span>/month</span></p>
+        <p class="desc">For organizations that want a dedicated productivity engineer.</p>
+        <ul>
+          <li><strong>Unlimited requests</strong> (fair‑use, not unlimited hours)</li>
+          <li>Prioritized queue and faster response times</li>
+          <li>One major automation or project per month</li>
+          <li>Quarterly process audit and roadmap</li>
+          <li>Slack/Teams channel for direct support</li>
+          <li>Custom dashboards and reporting automation</li>
+          <li>Executive summaries on time saved and efficiency impact</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Project‑Based Work (Add‑Ons)</h2>
+    <p>
+      Some projects require additional investment due to complexity, scope, or one‑time build effort. These are scoped as separate,
+      fixed‑fee projects with clear expectations.
+    </p>
+    <ul>
+      <li>You receive a written estimate <strong>before</strong> any project work begins.</li>
+      <li><strong>50% of the fee is required upfront</strong>, with the remaining 50% due on delivery.</li>
+      <li>No hidden fees or surprise invoices — everything is agreed upon in advance.</li>
+    </ul>
+
+    <p class="note">
+      Examples of add‑on projects: complex multi‑step automations, custom dashboards, app prototypes, data integrations, and
+      larger workflow transformations.
+    </p>
+
+    <div class="center">
+      <a href="{{ url_for('contact') }}" class="btn btn-primary">Talk About Your Needs</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

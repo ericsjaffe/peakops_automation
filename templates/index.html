@@ -1,0 +1,160 @@
+
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <h1>Streamline Your Work. Automate Your Operations.</h1>
+      <p class="hero-sub">
+        PeakOps Automation helps busy professionals and teams design better processes, build custom tools,
+        and automate repetitive work — so you can focus on high‑value tasks.
+      </p>
+      <ul class="hero-bullets">
+        <li>Process improvements</li>
+        <li>Productivity engineering</li>
+        <li>Automation &amp; custom tools</li>
+      </ul>
+      <div class="hero-cta">
+        <a href="{{ url_for('pricing') }}" class="btn btn-primary">Get Started With a Plan</a>
+        <a href="{{ url_for('contact') }}" class="btn btn-secondary">Request a Custom Project</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="stat-card">
+        <p class="stat-label">Time Saved This Month</p>
+        <p class="stat-value">27 hours</p>
+        <p class="stat-note">via automated reports, workflows &amp; tools</p>
+      </div>
+      <div class="flow-card">
+        <p class="flow-title">Before → After</p>
+        <ul>
+          <li>Manual reports → Automated dashboards</li>
+          <li>Copy/paste workflows → One‑click scripts</li>
+          <li>Messy processes → Clean, documented flows</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">How PeakOps Works</h2>
+    <div class="grid grid-4">
+      <div class="card">
+        <h3>1. Share Your Workflows</h3>
+        <p>You tell us where time is being wasted — manual reports, repetitive spreadsheets, clunky approvals, or copy/paste tasks.</p>
+      </div>
+      <div class="card">
+        <h3>2. We Design Better Processes</h3>
+        <p>We review your workflow, identify bottlenecks, and propose smarter, streamlined steps that fit how your team actually works.</p>
+      </div>
+      <div class="card">
+        <h3>3. We Build Custom Solutions</h3>
+        <p>From Excel automation and Python scripts to dashboards and mini‑apps, we create tools that plug into your existing stack.</p>
+      </div>
+      <div class="card">
+        <h3>4. You Save Hours Every Week</h3>
+        <p>You get repeatable, documented processes and tools that keep running in the background — without you babysitting them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <h2 class="section-title">Productivity Engineering for Modern Teams</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Process &amp; Efficiency Improvements</h3>
+        <ul>
+          <li>Workflow analysis &amp; redesign</li>
+          <li>SOPs and playbooks</li>
+          <li>Time‑saving process changes</li>
+          <li>Standardization across teams</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Automation &amp; Custom Tools</h3>
+        <ul>
+          <li>Excel &amp; Google Sheets automation</li>
+          <li>Python scripts &amp; data pipelines</li>
+          <li>Dashboards &amp; reporting tools</li>
+          <li>Mini web &amp; internal apps</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Data &amp; Reporting</h3>
+        <ul>
+          <li>Automated summaries &amp; reports</li>
+          <li>KPI dashboards</li>
+          <li>Data cleanup &amp; transformation</li>
+          <li>Data mining for insights</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Real Productivity. Not Just Pretty Dashboards.</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Save Hours Each Week</h3>
+        <p>Turn multi‑hour manual work into minutes with automated workflows and simple, repeatable tools.</p>
+      </div>
+      <div class="card">
+        <h3>Reduce Errors</h3>
+        <p>Standardized processes and validated tools mean fewer mistakes and more confidence in your data.</p>
+      </div>
+      <div class="card">
+        <h3>Scale Without Burnout</h3>
+        <p>Your systems handle more volume and complexity without needing to add headcount or overtime.</p>
+      </div>
+    </div>
+    <p class="center note">
+      Most clients see a <strong>30–70% reduction</strong> in time spent on recurring tasks within the first 60 days.
+    </p>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <h2 class="section-title">Flexible Plans for Every Level of Support</h2>
+    <p class="center">Whether you need a few small wins or a dedicated productivity partner, there’s a plan that fits.</p>
+    <div class="pricing-preview">
+      <div class="pricing-card">
+        <h3>Essentials Productivity</h3>
+        <p class="price">$199<span>/month</span></p>
+        <p class="desc">For solo pros &amp; small teams needing steady help.</p>
+      </div>
+      <div class="pricing-card">
+        <h3>Operational Efficiency</h3>
+        <p class="price">$499<span>/month</span></p>
+        <p class="desc">For managers and departments needing regular automation work.</p>
+      </div>
+      <div class="pricing-card">
+        <h3>Enterprise Productivity Partner</h3>
+        <p class="price">$1,200<span>/month</span></p>
+        <p class="desc">For organizations that want a dedicated productivity &amp; automation partner.</p>
+      </div>
+    </div>
+    <div class="center">
+      <a href="{{ url_for('pricing') }}" class="btn btn-primary">See Full Pricing &amp; Details</a>
+    </div>
+  </div>
+</section>
+
+<section class="section cta">
+  <div class="container cta-inner">
+    <div>
+      <h2>Ready to Level Up Your Productivity?</h2>
+      <p>Tell us what slows you down today, and we’ll show you how to streamline, automate, and scale.</p>
+    </div>
+    <div>
+      <a href="{{ url_for('contact') }}" class="btn btn-primary">Start With a Quick Discovery Message</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

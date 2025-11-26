@@ -1,0 +1,68 @@
+
+{% extends "base.html" %}
+{% block content %}
+<section class="section">
+  <div class="container">
+    <h1>Services</h1>
+    <p class="lead">
+      PeakOps Automation blends process improvement, productivity engineering, and custom technology solutions
+      to help you work faster, cleaner, and more efficiently.
+    </p>
+
+    <h2>Process &amp; Productivity Optimization</h2>
+    <p>
+      We start by understanding how your work actually gets done today. Then we map “as‑is” workflows, identify bottlenecks,
+      and design “to‑be” processes that are simpler, faster, and easier to follow.
+    </p>
+    <ul>
+      <li>Workflow analysis &amp; redesign</li>
+      <li>“As‑is” vs. “to‑be” process mapping</li>
+      <li>Time‑motion and bottleneck analysis</li>
+      <li>SOPs and playbooks for repeatable work</li>
+      <li>Standardization across teams and roles</li>
+    </ul>
+
+    <h2>Automation &amp; Custom Tools</h2>
+    <p>
+      Once the process is clear, we build the tools that make it run. From lightweight automations to more complex
+      scripts and dashboards, we focus on practical solutions you can use right away.
+    </p>
+    <ul>
+      <li>Excel &amp; Google Sheets automation and macros</li>
+      <li>Python scripts, data pipelines, and APIs</li>
+      <li>Dashboards (e.g., KPI and operational views)</li>
+      <li>Internal tools and mini‑apps for recurring workflows</li>
+      <li>Automated reporting cycles and scheduled jobs</li>
+    </ul>
+
+    <h2>Data, Reporting &amp; Insights</h2>
+    <p>
+      Data should support decisions — not slow them down. We help clean, structure, and automate the movement of data so
+      that your reporting is timely, accurate, and easy to understand.
+    </p>
+    <ul>
+      <li>Automated report generation</li>
+      <li>KPI dashboards and scorecards</li>
+      <li>Data cleanup, normalization, and transformation</li>
+      <li>Data mining and analysis for operational insights</li>
+    </ul>
+
+    <h2>Executive &amp; Team Productivity Packages</h2>
+    <p>
+      For leaders and teams that want ongoing support, PeakOps provides recurring services to maintain, evolve, and continuously
+      improve your processes and tools.
+    </p>
+    <ul>
+      <li>Regular process and workflow reviews</li>
+      <li>New automation and enhancement roadmaps</li>
+      <li>Executive dashboards and summary reports</li>
+      <li>Support for rollout, training, and adoption</li>
+    </ul>
+
+    <div class="center">
+      <a href="{{ url_for('pricing') }}" class="btn btn-primary">View Plans &amp; Pricing</a>
+      <a href="{{ url_for('contact') }}" class="btn btn-secondary">Ask About a Custom Project</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

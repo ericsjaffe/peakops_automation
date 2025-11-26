@@ -1,0 +1,59 @@
+
+{% extends "base.html" %}
+{% block content %}
+<section class="section">
+  <div class="container narrow">
+    <h1>Contact</h1>
+    <p class="lead">
+      Share a bit about what you’re trying to improve or automate, and we’ll follow up with next steps, ideas, and options.
+    </p>
+
+    <form method="post" class="contact-form">
+      <div class="form-row">
+        <label for="name">Name*</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-row">
+        <label for="email">Email*</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-row">
+        <label for="company">Company</label>
+        <input type="text" id="company" name="company">
+      </div>
+
+      <div class="form-row">
+        <label for="role">Role</label>
+        <input type="text" id="role" name="role">
+      </div>
+
+      <div class="form-row">
+        <label for="improvements">What are you trying to improve or automate?*</label>
+        <textarea id="improvements" name="improvements" rows="4" required></textarea>
+      </div>
+
+      <div class="form-row">
+        <label for="current_process">How are you handling this today?</label>
+        <textarea id="current_process" name="current_process" rows="4"></textarea>
+      </div>
+
+      <div class="form-row">
+        <label for="budget">Budget range (optional)</label>
+        <select id="budget" name="budget">
+          <option value="">Select an option</option>
+          <option value="under-1000">Under $1,000</option>
+          <option value="1000-3000">$1,000 – $3,000</option>
+          <option value="3000-5000">$3,000 – $5,000</option>
+          <option value="over-5000">Over $5,000</option>
+        </select>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Submit Message</button>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}
