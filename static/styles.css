@@ -39,14 +39,25 @@ a {
   justify-content: space-between;
 }
 
-.logo a {
-  font-weight: 700;
-  font-size: 1.3rem;
+/* === Header logo (image + text) === */
+.logo .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.logo span {
-  color: #22d3ee;
+.brand-logo {
+  height: 36px;      /* controls how big the logo appears */
+  width: auto;
+  display: block;
 }
+
+.brand-text {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #e5e7eb;    /* header text color */
+}
+
 
 .main-nav a {
   margin-left: 18px;
