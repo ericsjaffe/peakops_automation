@@ -3,7 +3,10 @@ import os
 import smtplib
 import ssl
 from email.message import EmailMessage
-import requests
+from datetime import datetime
+
+import gspread
+from google.oauth2.service_account import Credentials
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("FLASK_SECRET_KEY", "change-this-secret-key")
@@ -61,15 +64,48 @@ This message was generated automatically by your website.
 
 
 def log_to_google_sheets(form_data: dict):
-    """POST the form data to a Google Apps Script Web App that writes to a Sheet."""
-    url = os.environ.get("G_SHEETS_WEBHOOK_URL")
-    if not url:
-        print("Google Sheets webhook URL not configured; skipping log.")
+    """
+    Append the form data directly to a Google Sheet using
+    a service account + gspread.
+    """
+    # Spreadsheet ID from env var (required)
+    sheet_id = os.environ.get("GOOGLE_SHEETS_ID")
+    if not sheet_id:
+        print("GOOGLE_SHEETS_ID not set; skipping Google Sheets logging.")
+        return
+
+    # Path to the service account JSON
+    creds_path = os.environ.get(
+        "G_SHEETS_CREDS_PATH",
+        "credentials/peakops-3bafb19b9225.json"  # default to your current filename
+    )
+
+    if not os.path.exists(creds_path):
+        print(f"Credentials file not found at {creds_path}; skipping Google Sheets logging.")
         return
 
     try:
-        resp = requests.post(url, json=form_data, timeout=5)
-        print(f"Sheets response: {resp.status_code} {resp.text}")
+        creds = Credentials.from_service_account_file(
+            creds_path,
+            scopes=["https://www.googleapis.com/auth/spreadsheets"],
+        )
+        client = gspread.authorize(creds)
+        sheet = client.open_by_key(sheet_id).sheet1
+
+        # Build the row in the order matching your sheet headers
+        row = [
+            datetime.now().isoformat(timespec="seconds"),
+            form_data.get("name", ""),
+            form_data.get("email", ""),
+            form_data.get("company", ""),
+            form_data.get("role", ""),
+            form_data.get("improvements", ""),
+            form_data.get("current_process", ""),
+            form_data.get("budget", ""),
+        ]
+
+        sheet.append_row(row)
+        print("Logged contact form submission to Google Sheets.")
     except Exception as e:
         print(f"Error logging to Google Sheets: {e}")
 
@@ -106,6 +142,11 @@ def contact():
             "current_process": request.form.get("current_process", "").strip(),
             "budget": request.form.get("budget", "").strip(),
         }
+
+        # Basic validation
+        if not form_data["name"] or not form_data["email"] or not form_data["improvements"]:
+            flash("Please fill in all required fields.", "error")
+            return render_template("contact.html")
 
         # Log to Google Sheets
         log_to_google_sheets(form_data)
