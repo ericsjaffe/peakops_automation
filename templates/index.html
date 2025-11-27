@@ -5,25 +5,29 @@
 PeakOps Automation | Workflow Automation & Productivity Engineering
 {% endblock %}
 
+{# Override the default meta description from base.html #}
+{% block meta_description %}
+PeakOps Automation helps busy professionals and teams design better workflows, build custom automation tools, and eliminate hours of manual, repetitive work every week.
+{% endblock %}
+
 {# Page-specific SEO/meta + JSON-LD #}
 {% block extra_meta %}
-  <!-- Basic SEO -->
-  <meta name="description" content="PeakOps Automation helps busy professionals and teams streamline workflows, build custom automations, and save hours every week on recurring work.">
+  <!-- Canonical -->
   <link rel="canonical" href="https://peakops.club/">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph (Facebook, LinkedIn, iMessage, etc.) -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Streamline Your Work. Automate Your Operations.">
-  <meta property="og:description" content="PeakOps Automation helps busy professionals and teams design better processes, build custom tools, and automate repetitive work.">
-  <meta property="og:url" content="https://peakops.club/">
   <meta property="og:site_name" content="PeakOps Automation">
+  <meta property="og:title" content="PeakOps Automation | Workflow Automation & Productivity Engineering">
+  <meta property="og:description" content="PeakOps Automation helps busy professionals and teams design better workflows, build custom automation tools, and eliminate hours of manual, repetitive work every week.">
+  <meta property="og:url" content="https://peakops.club/">
   <meta property="og:image" content="https://peakops.club/static/img/peakops-social-card.png">
 
-  <!-- Twitter / X -->
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="PeakOps Automation | Workflow Automation & Productivity Engineering">
-  <meta name="twitter:description" content="Productivity engineering, workflow optimization, and custom automation for modern teams.">
+  <meta name="twitter:description" content="PeakOps Automation helps busy professionals and teams design better workflows, build custom automation tools, and eliminate hours of manual, repetitive work every week.">
   <meta name="twitter:image" content="https://peakops.club/static/img/peakops-social-card.png">
 
   <!-- JSON-LD: Organization -->
@@ -34,8 +38,11 @@ PeakOps Automation | Workflow Automation & Productivity Engineering
     "name": "PeakOps Automation",
     "url": "https://peakops.club/",
     "logo": "https://peakops.club/static/img/peakops-logo.png",
-    "description": "PeakOps Automation helps busy professionals and teams streamline workflows, improve processes, and build custom automations.",
-    "founder": "Eric Jaffe"
+    "description": "PeakOps Automation helps busy professionals and teams design better workflows, build custom automation tools, and eliminate hours of manual, repetitive work every week.",
+    "founder": {
+      "@type": "Person",
+      "name": "Eric Jaffe"
+    }
   }
   </script>
 
@@ -43,12 +50,20 @@ PeakOps Automation | Workflow Automation & Productivity Engineering
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Website",
+    "@type": "WebSite",
     "name": "PeakOps Automation",
-    "url": "https://peakops.club/"
+    "url": "https://peakops.club/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://peakops.club/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
   }
   </script>
 {% endblock %}
+
+{# keep your existing {% block content %} and rest of the page as-is #}
+
 
 {% block content %}
 <section class="hero">
