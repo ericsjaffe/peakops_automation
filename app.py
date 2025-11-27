@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, send_from_directory
+
 import os
 import requests
 
@@ -18,6 +19,11 @@ def log_to_google_sheets(form_data: dict):
         print(f"Sheets response: {resp.status_code} {resp.text}")
     except Exception as e:
         print(f"Error logging to Google Sheets: {e}")
+
+
+@app.route("/sitemap.xml")
+def sitemap():
+    return send_from_directory("static", "sitemap.xml", mimetype="application/xml")
 
 
 @app.route("/")
