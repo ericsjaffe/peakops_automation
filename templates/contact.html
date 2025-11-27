@@ -1,30 +1,48 @@
 {% extends "base.html" %}
 
 {% block title %}
-Contact PeakOps Automation | Start Your Automation Project
+Contact PeakOps Automation | Start Your Workflow Automation Project
 {% endblock %}
 
 {% block meta_description %}
-Share what you’re trying to improve or automate and PeakOps Automation will follow up with ideas, next steps, and options tailored to your workflows.
+Contact PeakOps Automation to schedule a discovery call or send a note about your workflows, automation ideas, and productivity challenges.
 {% endblock %}
 
 {% block extra_meta %}
+  <!-- Canonical -->
   <link rel="canonical" href="https://peakops.club/contact">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Contact PeakOps Automation">
-  <meta property="og:description" content="Tell us what slows you down today and we’ll help streamline, automate, and scale your workflows.">
-  <meta property="og:url" content="https://peakops.club/contact">
   <meta property="og:site_name" content="PeakOps Automation">
+  <meta property="og:title" content="Contact PeakOps Automation | Start Your Workflow Automation Project">
+  <meta property="og:description" content="Contact PeakOps Automation to schedule a discovery call or send a note about your workflows, automation ideas, and productivity challenges.">
+  <meta property="og:url" content="https://peakops.club/contact">
+  <meta property="og:image" content="https://peakops.club/static/img/peakops-social-card.png">
 
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Contact PeakOps Automation">
-  <meta name="twitter:description" content="Start a conversation about your processes, productivity, and automation opportunities.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact PeakOps Automation | Start Your Workflow Automation Project">
+  <meta name="twitter:description" content="Contact PeakOps Automation to schedule a discovery call or send a note about your workflows, automation ideas, and productivity challenges.">
+  <meta name="twitter:image" content="https://peakops.club/static/img/peakops-social-card.png">
 
-  <!-- Breadcrumb JSON-LD -->
+  <!-- JSON-LD: ContactPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact PeakOps Automation",
+    "url": "https://peakops.club/contact",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "PeakOps Automation",
+      "url": "https://peakops.club/"
+    }
+  }
+  </script>
+
+  <!-- Breadcrumbs -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -46,6 +64,7 @@ Share what you’re trying to improve or automate and PeakOps Automation will fo
   }
   </script>
 {% endblock %}
+
 
 {% block content %}
 <section class="section">
