@@ -1,30 +1,53 @@
 {% extends "base.html" %}
 
 {% block title %}
-About PeakOps Automation | Productivity Engineering by Eric Jaffe
+About PeakOps Automation | Productivity Engineering for Modern Teams
 {% endblock %}
 
 {% block meta_description %}
-Learn about PeakOps Automation, founded by Eric Jaffe, a builder and technologist focused on process improvement, workflow design, and custom automation for modern teams.
+Learn about PeakOps Automation, a boutique automation and productivity engineering studio led by Eric Jaffe, helping teams streamline work with practical tools.
 {% endblock %}
 
 {% block extra_meta %}
+  <!-- Canonical -->
   <link rel="canonical" href="https://peakops.club/about">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="About PeakOps Automation">
-  <meta property="og:description" content="PeakOps Automation exists to help teams reclaim time with better processes and automation, led by founder Eric Jaffe.">
-  <meta property="og:url" content="https://peakops.club/about">
   <meta property="og:site_name" content="PeakOps Automation">
+  <meta property="og:title" content="About PeakOps Automation | Productivity Engineering for Modern Teams">
+  <meta property="og:description" content="Learn about PeakOps Automation and how Eric Jaffe helps teams streamline work with practical automation and process improvements.">
+  <meta property="og:url" content="https://peakops.club/about">
+  <meta property="og:image" content="https://peakops.club/static/img/peakops-social-card.png">
 
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="About PeakOps Automation">
-  <meta name="twitter:description" content="Productivity engineering and automation services led by Eric Jaffe.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About PeakOps Automation | Productivity Engineering for Modern Teams">
+  <meta name="twitter:description" content="Learn about PeakOps Automation and how Eric Jaffe helps teams streamline work with practical automation and process improvements.">
+  <meta name="twitter:image" content="https://peakops.club/static/img/peakops-social-card.png">
 
-  <!-- Breadcrumb JSON-LD -->
+  <!-- JSON-LD: AboutPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About PeakOps Automation",
+    "url": "https://peakops.club/about",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "PeakOps Automation",
+      "url": "https://peakops.club/",
+      "description": "PeakOps Automation is a boutique automation and productivity engineering studio helping teams streamline work with practical tools.",
+      "founder": {
+        "@type": "Person",
+        "name": "Eric Jaffe"
+      }
+    }
+  }
+  </script>
+
+  <!-- Breadcrumbs -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -46,6 +69,7 @@ Learn about PeakOps Automation, founded by Eric Jaffe, a builder and technologis
   }
   </script>
 {% endblock %}
+
 
 {% block content %}
 <section class="section">
