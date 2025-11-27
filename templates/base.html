@@ -19,10 +19,11 @@
   {# Core stylesheet #}
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
-  <link rel="apple-touch-icon" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
-  <link rel="apple-touch-icon-precomposed" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
+  <!-- Favicon & app icons -->
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/peakops_favicon_64.png') }}">
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/apple-touch-icon.png') }}">
+  <link rel="apple-touch-icon-precomposed" href="{{ url_for('static', filename='img/apple-touch-icon.png') }}">
+
 
   {# Extra per-page SEO: canonical, OG, Twitter, JSON-LD, etc. #}
   {% block extra_meta %}{% endblock %}
