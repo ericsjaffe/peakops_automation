@@ -92,6 +92,43 @@ def contact():
 
     return render_template("contact.html")
 
+@app.route("/robots.txt")
+def robots_txt():
+    content = """User-agent: *
+Allow: /
+
+Sitemap: https://peakops.club/sitemap.xml
+"""
+    return Response(content, mimetype="text/plain")
+
+@app.route("/sitemap.xml")
+def sitemap_xml():
+    xml = """<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://peakops.club/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://peakops.club/services</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://peakops.club/pricing</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://peakops.club/about</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://peakops.club/contact</loc>
+    <priority>0.7</priority>
+  </url>
+</urlset>
+"""
+    return Response(xml, mimetype="application/xml")
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
