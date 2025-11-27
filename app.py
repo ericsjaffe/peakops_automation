@@ -1,5 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, send_from_directory, Response
-
+from flask import Flask, render_template, request, redirect, url_for, flash, Response
 import os
 import requests
 
@@ -7,22 +6,40 @@ app = Flask(__name__)
 app.secret_key = os.environ.get("FLASK_SECRET_KEY", "change-this-secret-key")
 
 
-def log_to_google_sheets(form_data: dict):
+def log_to_google_sheets(form_data: dict) -> None:
     """POST the form data to a Google Apps Script Web App that writes to a Sheet and sends an email."""
     url = os.environ.get("G_SHEETS_WEBHOOK_URL")
     if not url:
-        print("G_SHEETS_WEBHOOK_URL not set; skipping Google Sheets logging.")
+        app.logger.warning("G_SHEETS_WEBHOOK_URL not set; skipping Google Sheets logging.")
         return
 
     try:
         resp = requests.post(url, json=form_data, timeout=10)
-        print(f"Sheets response: {resp.status_code} {resp.text}")
-    except Exception as e:
-        print(f"Error logging to Google Sheets: {e}")
+        resp.raise_for_status()
+        app.logger.info("Logged to Google Sheets successfully: %s", resp.text[:500])
+    except requests.exceptions.RequestException as exc:
+        # Don't break the user experience if logging fails; just log the error.
+        app.logger.error("Error logging to Google Sheets: %s", exc, exc_info=True)
+
+
+@app.after_request
+def add_security_headers(response):
+    """Add a few lightweight security and privacy headers to every response."""
+    response.headers.setdefault("X-Frame-Options", "SAMEORIGIN")
+    response.headers.setdefault("X-Content-Type-Options", "nosniff")
+    response.headers.setdefault("Referrer-Policy", "strict-origin-when-cross-origin")
+    response.headers.setdefault("X-XSS-Protection", "1; mode=block")
+    return response
+
+
+@app.route("/health")
+def health():
+    """Simple health-check endpoint for uptime monitoring / Render probes."""
+    return {"status": "ok"}, 200
 
 
 @app.route("/sitemap.xml")
-def sitemap():
+def sitemap_xml() -> Response:
     pages = [
         "https://peakops.club/",
         "https://peakops.club/services",
@@ -31,24 +48,30 @@ def sitemap():
         "https://peakops.club/contact",
     ]
 
-    xml = ['<?xml version="1.0" encoding="UTF-8"?>']
-    xml.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
+    xml_lines = ['<?xml version="1.0" encoding="UTF-8"?>']
+    xml_lines.append('<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">')
 
     for url in pages:
-        xml.append("<url>")
-        xml.append(f"<loc>{url}</loc>")
-        xml.append("<changefreq>weekly</changefreq>")
-        xml.append("<priority>0.8</priority>")
-        xml.append("</url>")
+        xml_lines.append("  <url>")
+        xml_lines.append(f"    <loc>{url}</loc>")
+        xml_lines.append("    <changefreq>weekly</changefreq>")
+        xml_lines.append("    <priority>0.8</priority>")
+        xml_lines.append("  </url>")
 
-    xml.append("</urlset>")
+    xml_lines.append("</urlset>")
 
-    sitemap_xml = "\n".join(xml)
+    sitemap_xml = "\n".join(xml_lines)
     return Response(sitemap_xml, mimetype="application/xml")
 
+
 @app.route("/robots.txt")
-def robots():
-    return send_from_directory("static", "robots.txt", mimetype="text/plain")
+def robots_txt() -> Response:
+    content = """User-agent: *
+Allow: /
+
+Sitemap: https://peakops.club/sitemap.xml
+"""
+    return Response(content, mimetype="text/plain")
 
 
 @app.route("/")
@@ -92,43 +115,7 @@ def contact():
 
     return render_template("contact.html")
 
-@app.route("/robots.txt")
-def robots_txt():
-    content = """User-agent: *
-Allow: /
-
-Sitemap: https://peakops.club/sitemap.xml
-"""
-    return Response(content, mimetype="text/plain")
-
-@app.route("/sitemap.xml")
-def sitemap_xml():
-    xml = """<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://peakops.club/</loc>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://peakops.club/services</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://peakops.club/pricing</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://peakops.club/about</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://peakops.club/contact</loc>
-    <priority>0.7</priority>
-  </url>
-</urlset>
-"""
-    return Response(xml, mimetype="application/xml")
-
 
 if __name__ == "__main__":
+    # In production (Render), a WSGI server like gunicorn will run the app instead.
     app.run(host="0.0.0.0", port=5000)
