@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  
 <head>
   <meta charset="UTF-8">
-  <title>PeakOps Automation</title>
+
+  {# Page-specific <title> with a solid default #}
+  <title>
+    {% block title %}
+      PeakOps Automation | Workflow Automation & Productivity Engineering
+    {% endblock %}
+  </title>
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {# Default meta description; pages can override if they want #}
+  <meta name="description"
+        content="{% block meta_description %}PeakOps Automation helps busy professionals and teams streamline workflows, build custom automations, and save hours every week on recurring work.{% endblock %}">
+
+  {# Core stylesheet #}
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 
   <!-- Favicon -->
@@ -13,18 +24,19 @@
   <link rel="apple-touch-icon" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
   <link rel="apple-touch-icon-precomposed" href="{{ url_for('static', filename='apple-touch-icon.png') }}">
 
+  {# Extra per-page SEO: canonical, OG, Twitter, JSON-LD, etc. #}
+  {% block extra_meta %}{% endblock %}
 
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CW2QXQLK08"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-CW2QXQLK08');
-</script>
-
-  
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CW2QXQLK08"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CW2QXQLK08');
+  </script>
 </head>
+
 <body>
   <header class="site-header">
     <div class="container nav-container">
@@ -58,6 +70,7 @@
         </div>
       {% endif %}
     {% endwith %}
+
     {% block content %}{% endblock %}
   </main>
 
