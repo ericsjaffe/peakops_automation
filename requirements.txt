@@ -1,5 +1,6 @@
 flask
 gunicorn
+feedparser
 requests
 gspread
 google-auth
