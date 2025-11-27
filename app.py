@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, send_from_directory
+from flask import Flask, render_template, request, redirect, url_for, flash, send_from_directory, Response
 
 import os
 import requests
@@ -23,7 +23,28 @@ def log_to_google_sheets(form_data: dict):
 
 @app.route("/sitemap.xml")
 def sitemap():
-    return send_from_directory("static", "sitemap.xml", mimetype="application/xml")
+    pages = [
+        "https://peakops.club/",
+        "https://peakops.club/services",
+        "https://peakops.club/pricing",
+        "https://peakops.club/about",
+        "https://peakops.club/contact",
+    ]
+
+    xml = ['<?xml version="1.0" encoding="UTF-8"?>']
+    xml.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
+
+    for url in pages:
+        xml.append("<url>")
+        xml.append(f"<loc>{url}</loc>")
+        xml.append("<changefreq>weekly</changefreq>")
+        xml.append("<priority>0.8</priority>")
+        xml.append("</url>")
+
+    xml.append("</urlset>")
+
+    sitemap_xml = "\n".join(xml)
+    return Response(sitemap_xml, mimetype="application/xml")
 
 @app.route("/robots.txt")
 def robots():
