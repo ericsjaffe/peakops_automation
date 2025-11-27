@@ -5,26 +5,46 @@ Automation & Process Improvement Services | PeakOps Automation
 {% endblock %}
 
 {% block meta_description %}
-Explore PeakOps Automation services: process optimization, workflow redesign, automation and custom tools, and data & reporting solutions for modern teams.
+Explore PeakOps Automation services for workflow automation, process optimization, custom tools, and reporting solutions that reduce busywork and help your team scale.
 {% endblock %}
 
 {% block extra_meta %}
+  <!-- Canonical -->
   <link rel="canonical" href="https://peakops.club/services">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Automation & Process Improvement Services | PeakOps Automation">
-  <meta property="og:description" content="Process optimization, automation & custom tools, and data & reporting services to help teams work faster and cleaner.">
-  <meta property="og:url" content="https://peakops.club/services">
   <meta property="og:site_name" content="PeakOps Automation">
+  <meta property="og:title" content="Automation & Process Improvement Services | PeakOps Automation">
+  <meta property="og:description" content="Explore workflow automation, process optimization, custom tools, and reporting services that reduce busywork and help your team scale.">
+  <meta property="og:url" content="https://peakops.club/services">
+  <meta property="og:image" content="https://peakops.club/static/img/peakops-social-card.png">
 
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Automation & Process Improvement Services | PeakOps Automation">
-  <meta name="twitter:description" content="Process optimization, automation & custom tools, and data & reporting services for modern teams.">
+  <meta name="twitter:description" content="Explore workflow automation, process optimization, custom tools, and reporting services that reduce busywork and help your team scale.">
+  <meta name="twitter:image" content="https://peakops.club/static/img/peakops-social-card.png">
 
-  <!-- Breadcrumb JSON-LD -->
+  <!-- JSON-LD: Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Workflow Automation & Process Improvement",
+    "url": "https://peakops.club/services",
+    "provider": {
+      "@type": "Organization",
+      "name": "PeakOps Automation",
+      "url": "https://peakops.club/"
+    },
+    "description": "Workflow automation, process optimization, and custom tools for busy professionals and teams.",
+    "areaServed": "Global"
+  }
+  </script>
+
+  <!-- JSON-LD: Breadcrumbs -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -46,6 +66,9 @@ Explore PeakOps Automation services: process optimization, workflow redesign, au
   }
   </script>
 {% endblock %}
+
+{# keep the existing content block below unchanged #}
+
 
 {% block content %}
 <section class="section">
