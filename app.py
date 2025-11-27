@@ -49,7 +49,7 @@ def sitemap_xml() -> Response:
     ]
 
     xml_lines = ['<?xml version="1.0" encoding="UTF-8"?>']
-    xml_lines.append('<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">')
+    xml_lines.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
 
     for url in pages:
         xml_lines.append("  <url>")
