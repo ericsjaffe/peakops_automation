@@ -1,50 +1,55 @@
-<!-- Basic SEO -->
-<title>PeakOps Automation | Workflow Automation & Productivity Engineering</title>
-<meta name="description" content="PeakOps Automation helps busy professionals and teams streamline workflows, build custom automations, and save hours every week on recurring work.">
-<link rel="canonical" href="https://peakops.club/">
-<meta name="robots" content="index, follow">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- Favicon (adjust paths if needed) -->
-<link rel="icon" href="/static/img/peakops-logo.png" type="image/png">
-
-<!-- Open Graph (Facebook, LinkedIn, iMessage, etc.) -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Streamline Your Work. Automate Your Operations.">
-<meta property="og:description" content="PeakOps Automation helps busy professionals and teams design better processes, build custom tools, and automate repetitive work.">
-<meta property="og:url" content="https://peakops.club/">
-<meta property="og:site_name" content="PeakOps Automation">
-<meta property="og:image" content="https://peakops.club/static/img/peakops-social-card.png">
-
-<!-- Twitter / X -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="PeakOps Automation | Workflow Automation & Productivity Engineering">
-<meta name="twitter:description" content="Productivity engineering, workflow optimization, and custom automation for modern teams.">
-<meta name="twitter:image" content="https://peakops.club/static/img/peakops-social-card.png">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "PeakOps Automation",
-  "url": "https://peakops.club/",
-  "logo": "https://peakops.club/static/img/peakops-logo.png",
-  "description": "PeakOps Automation helps busy professionals and teams streamline workflows, improve processes, and build custom automations.",
-  "founder": "Eric Jaffe"
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Website",
-  "name": "PeakOps Automation",
-  "url": "https://peakops.club/"
-}
-</script>
-
-
 {% extends "base.html" %}
+
+{# Page-specific <title> #}
+{% block title %}
+PeakOps Automation | Workflow Automation & Productivity Engineering
+{% endblock %}
+
+{# Page-specific SEO/meta + JSON-LD #}
+{% block extra_meta %}
+  <!-- Basic SEO -->
+  <meta name="description" content="PeakOps Automation helps busy professionals and teams streamline workflows, build custom automations, and save hours every week on recurring work.">
+  <link rel="canonical" href="https://peakops.club/">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph (Facebook, LinkedIn, iMessage, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Streamline Your Work. Automate Your Operations.">
+  <meta property="og:description" content="PeakOps Automation helps busy professionals and teams design better processes, build custom tools, and automate repetitive work.">
+  <meta property="og:url" content="https://peakops.club/">
+  <meta property="og:site_name" content="PeakOps Automation">
+  <meta property="og:image" content="https://peakops.club/static/img/peakops-social-card.png">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PeakOps Automation | Workflow Automation & Productivity Engineering">
+  <meta name="twitter:description" content="Productivity engineering, workflow optimization, and custom automation for modern teams.">
+  <meta name="twitter:image" content="https://peakops.club/static/img/peakops-social-card.png">
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "PeakOps Automation",
+    "url": "https://peakops.club/",
+    "logo": "https://peakops.club/static/img/peakops-logo.png",
+    "description": "PeakOps Automation helps busy professionals and teams streamline workflows, improve processes, and build custom automations.",
+    "founder": "Eric Jaffe"
+  }
+  </script>
+
+  <!-- JSON-LD: Website -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Website",
+    "name": "PeakOps Automation",
+    "url": "https://peakops.club/"
+  }
+  </script>
+{% endblock %}
+
 {% block content %}
 <section class="hero">
   <div class="container hero-inner">
@@ -52,7 +57,7 @@
       <h1>Streamline Your Work. Automate Your Operations.</h1>
       <p class="hero-sub">
         PeakOps Automation helps busy professionals and teams design better processes, build custom tools,
-        and automate repetitive work — so you can focus on high‑value tasks.
+        and automate repetitive work — so you can focus on high-value tasks.
       </p>
       <ul class="hero-bullets">
         <li>Process improvements</li>
@@ -74,7 +79,7 @@
         <p class="flow-title">Before → After</p>
         <ul>
           <li>Manual reports → Automated dashboards</li>
-          <li>Copy/paste workflows → One‑click scripts</li>
+          <li>Copy/paste workflows → One-click scripts</li>
           <li>Messy processes → Clean, documented flows</li>
         </ul>
       </div>
@@ -96,7 +101,7 @@
       </div>
       <div class="card">
         <h3>3. We Build Custom Solutions</h3>
-        <p>From Excel automation and Python scripts to dashboards and mini‑apps, we create tools that plug into your existing stack.</p>
+        <p>From Excel automation and Python scripts to dashboards and mini-apps, we create tools that plug into your existing stack.</p>
       </div>
       <div class="card">
         <h3>4. You Save Hours Every Week</h3>
@@ -115,7 +120,7 @@
         <ul>
           <li>Workflow analysis &amp; redesign</li>
           <li>SOPs and playbooks</li>
-          <li>Time‑saving process changes</li>
+          <li>Time-saving process changes</li>
           <li>Standardization across teams</li>
         </ul>
       </div>
@@ -147,7 +152,7 @@
     <div class="grid grid-3">
       <div class="card">
         <h3>Save Hours Each Week</h3>
-        <p>Turn multi‑hour manual work into minutes with automated workflows and simple, repeatable tools.</p>
+        <p>Turn multi-hour manual work into minutes with automated workflows and simple, repeatable tools.</p>
       </div>
       <div class="card">
         <h3>Reduce Errors</h3>
