@@ -1,30 +1,47 @@
 {% extends "base.html" %}
 
 {% block title %}
-Automation Consulting Pricing & Productivity Plans | PeakOps Automation
+Pricing & Engagement Options | PeakOps Automation
 {% endblock %}
 
 {% block meta_description %}
-See PeakOps Automation pricing: Essentials Productivity, Operational Efficiency, and Enterprise Productivity Partner plans for ongoing automation and process improvement.
+See PeakOps Automation pricing and engagement options, from quick workflow tune-ups to ongoing automation support with clear deliverables and flexible terms.
 {% endblock %}
 
 {% block extra_meta %}
+  <!-- Canonical -->
   <link rel="canonical" href="https://peakops.club/pricing">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Automation Consulting Pricing & Productivity Plans">
-  <meta property="og:description" content="Flexible pricing for automation consulting, productivity engineering, and recurring workflow improvements.">
-  <meta property="og:url" content="https://peakops.club/pricing">
   <meta property="og:site_name" content="PeakOps Automation">
+  <meta property="og:title" content="Pricing & Engagement Options | PeakOps Automation">
+  <meta property="og:description" content="Explore PeakOps Automation pricing and engagement options, from quick workflow tune-ups to ongoing automation support.">
+  <meta property="og:url" content="https://peakops.club/pricing">
+  <meta property="og:image" content="https://peakops.club/static/img/peakops-social-card.png">
 
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Automation Consulting Pricing & Productivity Plans">
-  <meta name="twitter:description" content="Explore pricing for PeakOps Automation productivity and automation plans.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pricing & Engagement Options | PeakOps Automation">
+  <meta name="twitter:description" content="Explore PeakOps Automation pricing and engagement options, from quick workflow tune-ups to ongoing automation support.">
+  <meta name="twitter:image" content="https://peakops.club/static/img/peakops-social-card.png">
 
-  <!-- Breadcrumb JSON-LD -->
+  <!-- JSON-LD: OfferCatalog -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    "name": "PeakOps Automation Pricing",
+    "url": "https://peakops.club/pricing",
+    "provider": {
+      "@type": "Organization",
+      "name": "PeakOps Automation"
+    }
+  }
+  </script>
+
+  <!-- Breadcrumbs -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -46,6 +63,7 @@ See PeakOps Automation pricing: Essentials Productivity, Operational Efficiency,
   }
   </script>
 {% endblock %}
+
 
 {% block content %}
 <section class="section">
