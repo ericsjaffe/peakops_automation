@@ -24,7 +24,6 @@
   <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/apple-touch-icon.png') }}">
   <link rel="apple-touch-icon-precomposed" href="{{ url_for('static', filename='img/apple-touch-icon.png') }}">
 
-
   {# Extra per-page SEO: canonical, OG, Twitter, JSON-LD, etc. #}
   {% block extra_meta %}{% endblock %}
 
@@ -48,21 +47,26 @@
             alt="PeakOps Automation logo"
             class="brand-logo"
           >
-          <span class="brand-text">PeakOps Automation</span>
+          <span class="brand-text">PeakOps<br>Automation</span>
         </a>
       </div>
-      
-    <nav class="main-nav">
-      <a href="/">Home</a>
-      <a href="/services">Services</a>
-      <a href="/pricing">Pricing</a>
-      <a href="/about">About</a>
-      <a href="/results">Results </a>
-      <a href="/self-assessment" class="nav-cta">Self Assessment</a>
-      <a href="https://calendly.com/peakops" class="nav-cta"> Book a Call</a> 
-      <a href="/contact" class="nav-cta">Contact</a>
-    </nav>
-    
+
+      {# Mobile nav toggle button #}
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav class="main-nav">
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('services') }}">Services</a>
+        <a href="{{ url_for('pricing') }}">Pricing</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('results') }}">Results</a>
+        <a href="{{ url_for('self_assessment') }}" class="nav-cta">Self Assessment</a>
+        <a href="https://calendly.com/peakops" class="nav-cta">Book a Call</a>
+        <a href="{{ url_for('contact') }}" class="nav-cta">Contact</a>
+      </nav>
     </div>
   </header>
 
@@ -86,5 +90,20 @@
       <p class="tagline">Your productivity engineers for modern teams.</p>
     </div>
   </footer>
+
+  {# Simple mobile nav toggle script #}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var toggle = document.querySelector('.nav-toggle');
+      var nav = document.querySelector('.main-nav');
+
+      if (toggle && nav) {
+        toggle.addEventListener('click', function () {
+          var isOpen = nav.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+      }
+    });
+  </script>
 </body>
 </html>
