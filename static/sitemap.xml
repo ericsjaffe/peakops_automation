@@ -6,6 +6,7 @@
     <loc>https://peakops.club/</loc>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
+    <lastmod>2025-11-28</lastmod>
   </url>
 
   <!-- About Page -->
@@ -13,6 +14,7 @@
     <loc>https://peakops.club/about</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
+    <lastmod>2025-11-28</lastmod>
   </url>
 
   <!-- Services Page -->
@@ -20,6 +22,31 @@
     <loc>https://peakops.club/services</loc>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
+    <lastmod>2025-11-28</lastmod>
+  </url>
+
+  <!-- Pricing Page -->
+  <url>
+    <loc>https://peakops.club/pricing</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2025-11-28</lastmod>
+  </url>
+
+  <!-- Results Page -->
+  <url>
+    <loc>https://peakops.club/results</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2025-11-28</lastmod>
+  </url>
+
+  <!-- Self Assessment -->
+  <url>
+    <loc>https://peakops.club/self-assessment</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <lastmod>2025-11-28</lastmod>
   </url>
 
   <!-- Contact Page -->
@@ -27,37 +54,7 @@
     <loc>https://peakops.club/contact</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
-  </url>
-
-  <!-- Automation Examples / Portfolio -->
-  <url>
-    <loc>https://peakops.club/examples</loc>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-
-    <!-- Automation Examples / Client Stories -->
-
-  <url>
-    <loc>https://peakops.club/results</loc>
     <lastmod>2025-11-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-      <!-- Automation Examples / Self Assessment -->
-  <url>
-    <loc>https://peakops.club/self-assessment</loc>
-    <lastmod>2025-11-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <!-- Blog (optional but highly recommended later) -->
-  <url>
-    <loc>https://peakops.club/blog</loc>
-    <priority>0.6</priority>
-    <changefreq>weekly</changefreq>
   </url>
 
 </urlset>
