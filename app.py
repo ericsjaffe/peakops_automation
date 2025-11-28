@@ -101,6 +101,10 @@ def results():
 def self_assessment():
     return render_template("self_assessment.html")
 
+@app.route('/sitemap.xml')
+def sitemap_xml():
+    xml = render_template('sitemap.xml')
+    return Response(xml, mimetype='application/xml')
 
 
 @app.route("/contact", methods=["GET", "POST"])
