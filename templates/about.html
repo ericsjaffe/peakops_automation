@@ -1,147 +1,109 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
 
-{% block title %}
-About PeakOps Automation | Productivity Engineering for Modern Teams
-{% endblock %}
+  {# Page-specific <title> with a solid default #}
+  <title>
+    {% block title %}
+      PeakOps Automation | Workflow Automation & Productivity Engineering
+    {% endblock %}
+  </title>
 
-{% block meta_description %}
-Learn about PeakOps Automation, a boutique automation and productivity engineering studio led by Eric Jaffe, helping teams streamline work with practical tools.
-{% endblock %}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-{% block extra_meta %}
-  <!-- Canonical -->
-  <link rel="canonical" href="https://peakops.club/about">
-  <meta name="robots" content="index, follow">
+  {# Default meta description; pages can override if they want #}
+  <meta name="description"
+        content="{% block meta_description %}PeakOps Automation helps busy professionals and teams streamline workflows, build custom automations, and save hours every week on recurring work.{% endblock %}">
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="PeakOps Automation">
-  <meta property="og:title" content="About PeakOps Automation | Productivity Engineering for Modern Teams">
-  <meta property="og:description" content="Learn about PeakOps Automation and how Eric Jaffe helps teams streamline work with practical automation and process improvements.">
-  <meta property="og:url" content="https://peakops.club/about">
-  <meta property="og:image" content="https://peakops.club/static/img/peakops-social-card.png">
+  {# Core stylesheet #}
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="About PeakOps Automation | Productivity Engineering for Modern Teams">
-  <meta name="twitter:description" content="Learn about PeakOps Automation and how Eric Jaffe helps teams streamline work with practical automation and process improvements.">
-  <meta name="twitter:image" content="https://peakops.club/static/img/peakops-social-card.png">
+  <!-- Favicon & app icons -->
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/peakops_favicon_64.png') }}">
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/apple-touch-icon.png') }}">
+  <link rel="apple-touch-icon-precomposed" href="{{ url_for('static', filename='img/apple-touch-icon.png') }}">
 
-  <!-- JSON-LD: AboutPage -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "About PeakOps Automation",
-    "url": "https://peakops.club/about",
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "PeakOps Automation",
-      "url": "https://peakops.club/",
-      "description": "PeakOps Automation is a boutique automation and productivity engineering studio helping teams streamline work with practical tools.",
-      "founder": {
-        "@type": "Person",
-        "name": "Eric Jaffe"
-      }
-    }
-  }
+  {# Extra per-page SEO: canonical, OG, Twitter, JSON-LD, etc. #}
+  {% block extra_meta %}{% endblock %}
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CW2QXQLK08"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CW2QXQLK08');
   </script>
+</head>
 
-  <!-- Breadcrumbs -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://peakops.club/"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "About",
-        "item": "https://peakops.club/about"
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <div class="logo">
+        <a href="{{ url_for('index') }}" class="brand">
+          <img
+            src="{{ url_for('static', filename='img/peakops-logo.png') }}"
+            alt="PeakOps Automation logo"
+            class="brand-logo"
+          >
+          <span class="brand-text">PeakOps<br>Automation</span>
+        </a>
+      </div>
+
+      {# Mobile nav toggle button #}
+      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav class="main-nav">
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('services') }}">Services</a>
+        <a href="{{ url_for('pricing') }}">Pricing</a>
+        <a href="{{ url_for('about') }}">About</a>
+        <a href="{{ url_for('results') }}">Results</a>
+        <a href="{{ url_for('self_assessment') }}" class="nav-cta">Self Assessment</a>
+        <a href="https://calendly.com/peakops" class="nav-cta">Book a Call</a>
+        <a href="{{ url_for('contact') }}" class="nav-cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-wrapper container">
+          {% for category, message in messages %}
+            <div class="flash flash-{{ category }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2025 PeakOps Automation. All rights reserved.</p>
+      <p class="tagline">Your productivity engineers for modern teams.</p>
+    </div>
+  </footer>
+
+  {# Simple mobile nav toggle script #}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var toggle = document.querySelector('.nav-toggle');
+      var nav = document.querySelector('.main-nav');
+
+      if (toggle && nav) {
+        toggle.addEventListener('click', function () {
+          var isOpen = nav.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
       }
-    ]
-  }
+    });
   </script>
-{% endblock %}
-
-
-{% block content %}
-
-{# Hero-style intro #}
-<section class="hero hero-internal">
-  <div class="container hero-inner">
-    <div class="hero-content">
-      <h1>About PeakOps Automation</h1>
-      <p class="hero-sub">
-        PeakOps Automation was founded by <strong>Eric Jaffe</strong> with a simple mission:
-        help professionals and teams reclaim their time by streamlining workflows, improving processes,
-        and automating the work that slows them down.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container narrow">
-    <h2>Eric’s Background</h2>
-    <p>
-      Eric’s expertise sits at the intersection of process improvement, automation engineering, workflow design,
-      data analysis, and solution building. He has led technology initiatives across multiple teams and partnered closely
-      with operations, sales, and product organizations to deliver tools used daily by professionals who depend on accurate,
-      fast, and automated workflows.
-    </p>
-    <p>
-      From high-level operational strategy to hands-on building, Eric has the unique ability to understand the problem
-      and deliver the solution — whether that means an automated spreadsheet, a Python script, a dashboard, or a complete workflow redesign.
-    </p>
-
-    <h2>Why PeakOps Exists</h2>
-    <p>
-      Most professionals and teams waste countless hours each week rebuilding reports, copying and pasting data,
-      cleaning spreadsheets, updating trackers, and manually compiling information for leadership. Systems feel clunky,
-      work feels repetitive, and everyone knows there <em>has</em> to be a better way — but no one has time to build it.
-    </p>
-    <p>
-      Eric built PeakOps Automation to fix that. PeakOps helps clients improve processes, increase productivity, reduce manual workload,
-      and build tools that create repeatable, scalable efficiency. Every solution is custom-built to fit how your team works — not the other way around.
-    </p>
-
-    <h2>What Makes Eric Different</h2>
-    <p>
-      Eric combines a builder’s mindset with an operator’s mindset. He doesn’t just write code or clean a spreadsheet —
-      he examines the entire workflow, identifies bottlenecks, and redesigns the process so it becomes faster, cleaner, and more scalable.
-    </p>
-    <p>
-      His approach includes understanding the business goal, identifying inefficiencies, designing a better process,
-      building custom automations, delivering tools that save time immediately, and documenting everything so teams can adopt and maintain it confidently.
-    </p>
-
-    <h2>A Builder at Heart</h2>
-    <p>
-      Whether it’s a Python script, a dashboard, a reporting engine, a mobile app concept, an intake form, or a complete automation,
-      Eric thrives on taking messy, time-consuming workflows and turning them into clean, efficient systems that just work.
-      PeakOps Automation is the result of years of building, experimenting, refining, and helping people work smarter.
-    </p>
-
-    <h2>The Mission</h2>
-    <p class="highlight">
-      At PeakOps, the mission is simple: <strong>empower professionals and teams with better processes, smarter tools,
-      and automation that saves real time every week.</strong>
-    </p>
-    <p>
-      If it slows you down, repeats constantly, or takes too long — Eric will streamline it, automate it, or rebuild it from scratch.
-    </p>
-
-    <div class="center" style="margin-top: 32px;">
-      <a href="{{ url_for('contact') }}" class="btn btn-primary">Work With Eric</a>
-      <a href="{{ url_for('self_assessment') }}" class="btn btn-secondary">Take the Self-Assessment</a>
-    </div>
-  </div>
-</section>
-{% endblock %}
+</body>
+</html>
