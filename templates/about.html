@@ -72,14 +72,23 @@ Learn about PeakOps Automation, a boutique automation and productivity engineeri
 
 
 {% block content %}
+
+{# Hero-style intro #}
+<section class="hero hero-internal">
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <h1>About PeakOps Automation</h1>
+      <p class="hero-sub">
+        PeakOps Automation was founded by <strong>Eric Jaffe</strong> with a simple mission:
+        help professionals and teams reclaim their time by streamlining workflows, improving processes,
+        and automating the work that slows them down.
+      </p>
+    </div>
+  </div>
+</section>
+
 <section class="section">
   <div class="container narrow">
-    <h1>About PeakOps Automation</h1>
-    <p class="lead">
-      PeakOps Automation was founded by <strong>Eric Jaffe</strong>, a builder, technologist, and process-optimizer with a simple mission:
-      <em>help professionals and teams reclaim their time by streamlining workflows, improving processes, and automating the work that slows them down.</em>
-    </p>
-
     <h2>Eric’s Background</h2>
     <p>
       Eric’s expertise sits at the intersection of process improvement, automation engineering, workflow design,
@@ -129,8 +138,9 @@ Learn about PeakOps Automation, a boutique automation and productivity engineeri
       If it slows you down, repeats constantly, or takes too long — Eric will streamline it, automate it, or rebuild it from scratch.
     </p>
 
-    <div class="center">
+    <div class="center" style="margin-top: 32px;">
       <a href="{{ url_for('contact') }}" class="btn btn-primary">Work With Eric</a>
+      <a href="{{ url_for('self_assessment') }}" class="btn btn-secondary">Take the Self-Assessment</a>
     </div>
   </div>
 </section>
