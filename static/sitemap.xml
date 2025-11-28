@@ -36,6 +36,16 @@
     <changefreq>monthly</changefreq>
   </url>
 
+    <!-- Automation Examples / Client Stories -->
+
+<url>
+  <loc>https://peakops.club/results</loc>
+  <lastmod>2025-11-28</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+  
   <!-- Blog (optional but highly recommended later) -->
   <url>
     <loc>https://peakops.club/blog</loc>
