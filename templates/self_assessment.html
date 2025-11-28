@@ -9,7 +9,9 @@ Take the PeakOps Workflow Automation Self-Assessment to identify wasted time, in
 {% endblock %}
 
 {% block extra_meta %}
+  <!-- Canonical -->
   <link rel="canonical" href="https://peakops.club/self-assessment">
+  <meta name="robots" content="index, follow">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -27,8 +29,9 @@ Take the PeakOps Workflow Automation Self-Assessment to identify wasted time, in
   <meta name="twitter:image" content="https://peakops.club/static/img/peakops-social-preview.png">
 {% endblock %}
 
+
 {% block content %}
-  <!-- Hero -->
+
   <section class="hero hero-internal">
     <div class="container hero-inner">
       <div class="hero-content">
@@ -40,17 +43,16 @@ Take the PeakOps Workflow Automation Self-Assessment to identify wasted time, in
     </div>
   </section>
 
-  <!-- Intro text -->
   <section class="section section-alt">
-    <div class="container narrow">
-      <p class="lead center">
+    <div class="container">
+      <p class="section-intro">
         Complete this short assessment to help us understand your current processes and provide
         customized recommendations — including time savings, automation ideas, and workflow redesign opportunities.
       </p>
     </div>
   </section>
 
-  <!-- Google Form -->
+  <!-- Embedded Google Form -->
   <section class="section">
     <div class="container">
       <iframe
@@ -60,10 +62,11 @@ Take the PeakOps Workflow Automation Self-Assessment to identify wasted time, in
         frameborder="0"
         marginheight="0"
         marginwidth="0"
-        style="border:none;"
+        style="border: none;"
       >
         Loading…
       </iframe>
     </div>
   </section>
+
 {% endblock %}
