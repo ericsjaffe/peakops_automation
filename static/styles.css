@@ -321,6 +321,12 @@ a {
   color: #64748b;
 }
 
+/* Featured pricing */
+.pricing-card.featured {
+  border: 1px solid #2563eb;
+  box-shadow: 0 16px 36px rgba(37, 99, 235, 0.18);
+}
+
 /* ============================
    BIG CTA BAND
    ============================ */
@@ -364,7 +370,10 @@ a {
   color: #6b7280;
 }
 
-/* About & contact */
+/* ============================
+   ABOUT & CONTACT LAYOUT
+   ============================ */
+
 .narrow {
   max-width: 760px;
 }
@@ -374,19 +383,6 @@ a {
   padding: 12px 16px;
   border-radius: 12px;
   border-left: 3px solid #2563eb;
-}
-
-/* Pricing page layout */
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-  margin-top: 32px;
-}
-
-.pricing-card.featured {
-  border: 1px solid #2563eb;
-  box-shadow: 0 16px 36px rgba(37, 99, 235, 0.18);
 }
 
 /* Contact form */
@@ -471,6 +467,108 @@ textarea {
 }
 
 /* ============================
+   RESULTS PAGE: STATS, CARDS, TESTIMONIALS
+   ============================ */
+
+/* Top stats row on Results */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* Reuse .stat-card base, but tighten look in stats grid */
+.stats-grid .stat-card {
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+  text-align: left;
+}
+
+.stats-grid .stat-card h2 {
+  font-size: 1.3rem;
+  margin: 0 0 6px;
+}
+
+.stats-grid .stat-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #e5e7eb;
+}
+
+/* Intro paragraph before case studies */
+.section-intro {
+  max-width: 700px;
+  margin: 0 auto 24px;
+  font-size: 1rem;
+  color: #475569;
+}
+
+/* Case study cards grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.card-tag {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+  margin-bottom: 8px;
+}
+
+.card-list {
+  padding-left: 18px;
+  margin: 0 0 8px;
+  font-size: 0.92rem;
+  color: #334155;
+}
+
+.card-result {
+  font-size: 0.9rem;
+  color: #0f172a;
+  margin: 0;
+}
+
+/* Testimonials layout */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.testimonial {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+}
+
+.testimonial blockquote {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #0f172a;
+}
+
+.testimonial-name {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #111827;
+}
+
+.testimonial-role {
+  display: block;
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+/* ============================
    RESPONSIVE TWEAKS
    ============================ */
 
@@ -528,5 +626,11 @@ textarea {
   /* Make sure CTA section has nice breathing room on mobile */
   .cta-section {
     padding: 0 8px;
+  }
+
+  /* Slightly more breathing room on small screens for Results cards */
+  .stats-grid .stat-card,
+  .testimonials-grid .testimonial {
+    padding: 18px;
   }
 }
