@@ -97,6 +97,11 @@ def pricing():
 def results():
     return render_template("results.html")
 
+@app.route("/self-assessment")
+def self_assessment():
+    return render_template("self_assessment.html")
+
+
 
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
