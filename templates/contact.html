@@ -67,13 +67,42 @@ Contact PeakOps Automation to schedule a discovery call or send a note about you
 
 
 {% block content %}
+
+{# Hero-style intro #}
+<section class="hero hero-internal">
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <h1>Contact PeakOps Automation</h1>
+      <p class="hero-sub">
+        Share a bit about the workflows you’d like to improve or automate, and we’ll follow up
+        with ideas, next steps, and options that fit how your team works today.
+      </p>
+    </div>
+  </div>
+</section>
+
+{# Helper text / expectations #}
+<section class="section section-alt">
+  <div class="container narrow">
+    <p class="lead">
+      The more context you can share, the better. Helpful details include:
+    </p>
+    <ul>
+      <li>How many people are involved in the workflow today</li>
+      <li>How often the work happens (daily, weekly, monthly)</li>
+      <li>What tools you’re already using (Excel, Google Sheets, CRMs, ticketing tools, etc.)</li>
+      <li>Any deadlines or timelines we should be aware of</li>
+    </ul>
+    <p class="note">
+      Prefer to start with a quick assessment? You can also
+      <a href="{{ url_for('self_assessment') }}">take the Workflow Self-Assessment</a> and we’ll review your answers before we connect.
+    </p>
+  </div>
+</section>
+
+{# Contact form #}
 <section class="section">
   <div class="container narrow">
-    <h1>Contact</h1>
-    <p class="lead">
-      Share a bit about what you’re trying to improve or automate, and we’ll follow up with next steps, ideas, and options.
-    </p>
-
     <form method="post" class="contact-form">
       <div class="form-row">
         <label for="name">Name*</label>
