@@ -62,8 +62,6 @@ PeakOps Automation helps busy professionals and teams design better workflows, b
   </script>
 {% endblock %}
 
-{# keep your existing {% block content %} and rest of the page as-is #}
-
 
 {% block content %}
 <section class="hero">
@@ -98,6 +96,25 @@ PeakOps Automation helps busy professionals and teams design better workflows, b
           <li>Messy processes → Clean, documented flows</li>
         </ul>
       </div>
+    </div>
+  </div>
+</section>
+
+{# New CTA section for Self Assessment + Call #}
+<section class="section alt">
+  <div class="container cta-section">
+    <h2 class="section-title">Not sure where to start with automation?</h2>
+    <p class="center">
+      Take the PeakOps Workflow Self-Assessment and get a personalized report on
+      where your team is wasting time — plus specific automation ideas you can act on quickly.
+    </p>
+    <div class="cta-buttons">
+      <a href="{{ url_for('self_assessment') }}" class="btn btn-primary">
+        Take the Self-Assessment
+      </a>
+      <a href="https://your-calendly-link-here" class="btn btn-secondary">
+        Book a 15-min Workflow Call
+      </a>
     </div>
   </div>
 </section>
