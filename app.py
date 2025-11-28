@@ -93,6 +93,10 @@ def services():
 def pricing():
     return render_template("pricing.html")
 
+@app.route("/results")
+def results():
+    return render_template("results.html")
+
 
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
