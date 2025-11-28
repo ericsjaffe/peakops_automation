@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Client Results, Case Studies & Testimonials | PeakOps Automation</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Primary SEO -->
+  <meta name="description"
+        content="See real-world workflow automation projects, time saved, and testimonials from PeakOps Automation clients. Discover how we help teams eliminate manual work and scale their operations.">
+
+  <link rel="canonical" href="https://peakops.club/results">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Client Results & Testimonials | PeakOps Automation">
+  <meta property="og:description"
+        content="Real examples of workflow automation, productivity engineering, and custom tools delivered by PeakOps Automation.">
+  <meta property="og:url" content="https://peakops.club/results">
+  <meta property="og:site_name" content="PeakOps Automation">
+  <meta property="og:image" content="https://peakops.club/static/img/peakops-social-preview.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Client Results & Testimonials | PeakOps Automation">
+  <meta name="twitter:description"
+        content="See how PeakOps Automation helps busy professionals and teams save hours every week with better workflows and automation.">
+  <meta name="twitter:image" content="https://peakops.club/static/img/peakops-social-preview.png">
+
+  <!-- JSON-LD: LocalBusiness + Reviews -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "PeakOps Automation",
+    "url": "https://peakops.club",
+    "logo": "https://peakops.club/static/img/peakops-logo.png",
+    "image": "https://peakops.club/static/img/peakops-logo.png",
+    "description": "Workflow automation and productivity engineering for busy professionals and teams.",
+    "areaServed": {
+      "@type": "Place",
+      "name": "United States"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/peakops-automation"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "6"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Operations Manager, Background Screening Company"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        },
+        "reviewBody": "PeakOps helped us turn a painful weekly reporting process into an automated dashboard. We reclaimed dozens of hours every month."
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "VP of Engineering, SaaS Company"
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        },
+        "reviewBody": "We now have clean, automated GitHub and SonarQube metrics across all of our teams. What used to be a mess in spreadsheets is now a set of reliable dashboards."
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="icon" type="image/png" href="/static/favicon.png">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <div class="logo">
+        <a href="/" class="brand">
+          <img
+            src="/static/img/peakops-logo.png"
+            alt="PeakOps Automation logo"
+            class="brand-logo"
+          >
+          <span class="brand-text">PeakOps Automation</span>
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/services">Services</a>
+        <a href="/pricing">Pricing</a>
+        <a href="/about">About</a>
+        <a href="/results" class="nav-cta">Results</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero hero-internal">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <h1>Client Results & Testimonials</h1>
+          <p class="hero-subtitle">
+            Real examples of how PeakOps Automation helps busy professionals and teams
+            streamline workflows, eliminate manual work, and save hours every week.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Metrics / Social Proof -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h2>27+ Hours Saved / Month</h2>
+            <p>Per team on average, through automated reports, workflows and tools.</p>
+          </div>
+          <div class="stat-card">
+            <h2>30–70% Time Reduction</h2>
+            <p>On recurring manual tasks within the first 60 days for most clients.</p>
+          </div>
+          <div class="stat-card">
+            <h2>Cross-Tool Automation</h2>
+            <p>Excel, Google Sheets, Python, dashboards, and internal mini-apps working together.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Case Studies -->
+    <section class="section">
+      <div class="container">
+        <h2>Featured Client Projects</h2>
+        <p class="section-intro">
+          Here are a few examples of workflow automation and productivity engineering projects
+          we’ve delivered for clients.
+        </p>
+
+        <div class="cards-grid">
+          <!-- Case Study 1 -->
+          <article class="card">
+            <h3>Automated Engineering Metrics Dashboard</h3>
+            <p class="card-tag">Enterprise SaaS • GitHub • SonarQube • Google Sheets</p>
+            <ul class="card-list">
+              <li>Connected GitHub, SonarQube, and deployment data into a single metrics pipeline.</li>
+              <li>Automated weekly reporting of DORA metrics, PR throughput, and code quality.</li>
+              <li>Replaced manual spreadsheet updates and screenshots in slide decks.</li>
+            </ul>
+            <p class="card-result">
+              <strong>Result:</strong> ~6 hours per week saved for engineering leadership and
+              data is now always up to date for reviews and QBRs.
+            </p>
+          </article>
+
+          <!-- Case Study 2 -->
+          <article class="card">
+            <h3>Operations Workflow Automation for Reporting</h3>
+            <p class="card-tag">Operations • Excel • Python • Email Automation</p>
+            <ul class="card-list">
+              <li>Turned a multi-step copy/paste reporting workflow into a one-click script.</li>
+              <li>Standardized data cleanup and validation logic in code instead of spreadsheets.</li>
+              <li>Scheduled automated report delivery to stakeholders via email.</li>
+            </ul>
+            <p class="card-result">
+              <strong>Result:</strong> Weekly reporting now runs in minutes instead of hours,
+              with fewer errors and no manual intervention.
+            </p>
+          </article>
+
+          <!-- Case Study 3 -->
+          <article class="card">
+            <h3>Real-Time KPI Dashboard for Leadership</h3>
+            <p class="card-tag">Leadership • Dashboards • Data Pipelines</p>
+            <ul class="card-list">
+              <li>Designed a simple KPI dashboard focused on the metrics leadership actually uses.</li>
+              <li>Built a small data pipeline to refresh metrics on a daily schedule.</li>
+              <li>Created a documentation pack so the team understands how everything works.</li>
+            </ul>
+            <p class="card-result">
+              <strong>Result:</strong> Leadership now has a single source of truth and no longer
+              waits for “special” slide decks every week.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section section-alt">
+      <div class="container">
+        <h2>What Clients Are Saying</h2>
+
+        <div class="testimonials-grid">
+          <figure class="testimonial">
+            <blockquote>
+              “PeakOps took a messy, manual workflow and turned it into a clean, automated process.
+              My team now saves hours every single week and we finally trust our numbers.”
+            </blockquote>
+            <figcaption>
+              <span class="testimonial-name">Director of Operations</span>
+              <span class="testimonial-role">Mid-sized services company</span>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial">
+            <blockquote>
+              “We knew we were wasting time, but we didn’t realize how much until the PeakOps
+              workflow audit. The changes we made paid for themselves in the first month.”
+            </blockquote>
+            <figcaption>
+              <span class="testimonial-name">VP of Product & Engineering</span>
+              <span class="testimonial-role">B2B SaaS company</span>
+            </figcaption>
+          </figure>
+
+          <figure class="testimonial">
+            <blockquote>
+              “Instead of asking my team to create ad-hoc spreadsheets, we now have automated
+              dashboards and reports. It’s cleaner, faster, and way less stressful.”
+            </blockquote>
+            <figcaption>
+              <span class="testimonial-name">Head of Technology</span>
+              <span class="testimonial-role">Enterprise client</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="container cta-section">
+        <h2>Want Similar Results for Your Team?</h2>
+        <p>
+          Share your current workflows and we’ll walk you through where time is being wasted — and
+          how automation and better process design can help.
+        </p>
+        <div class="button-row">
+          <a href="/contact" class="btn btn-primary">Start a Workflow Audit</a>
+          <a href="/services" class="btn btn-secondary">See Services</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 PeakOps Automation. All rights reserved.</p>
+      <p>Your productivity engineers for modern teams.</p>
+    </div>
+  </footer>
+</body>
+</html>
