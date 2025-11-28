@@ -66,11 +66,25 @@ See PeakOps Automation pricing and engagement options, from quick workflow tune-
 
 
 {% block content %}
+
+{# Hero-style intro #}
+<section class="hero hero-internal">
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <h1>Pricing &amp; Engagement Options</h1>
+      <p class="hero-sub">
+        Flexible plans for everything from a few focused wins to a dedicated productivity and automation partner —
+        with clear deliverables and no surprise invoices.
+      </p>
+    </div>
+  </div>
+</section>
+
 <section class="section">
   <div class="container">
-    <h1>Pricing</h1>
-    <p class="lead">
-      Flexible plans for everything from a few focused wins to a dedicated productivity and automation partner.
+    <p class="lead center">
+      Most clients start with a single workflow or a small package, see results within the first 30–60 days,
+      and then expand as they see how much time they’re getting back.
     </p>
 
     <div class="pricing-grid">
@@ -100,6 +114,9 @@ See PeakOps Automation pricing and engagement options, from quick workflow tune-
           <li>SOP / documentation for major automations</li>
           <li>Priority support queue</li>
         </ul>
+        <p class="note">
+          Most popular for teams that know they’re wasting time but don’t have internal bandwidth to fix it.
+        </p>
       </div>
 
       <div class="pricing-card">
@@ -134,8 +151,9 @@ See PeakOps Automation pricing and engagement options, from quick workflow tune-
       larger workflow transformations.
     </p>
 
-    <div class="center">
+    <div class="center" style="margin-top: 32px;">
       <a href="{{ url_for('contact') }}" class="btn btn-primary">Talk About Your Needs</a>
+      <a href="{{ url_for('self_assessment') }}" class="btn btn-secondary">Take the Self-Assessment First</a>
     </div>
   </div>
 </section>
