@@ -1,4 +1,3 @@
-
 *,
 *::before,
 *::after {
@@ -57,7 +56,6 @@ a {
   font-size: 1.25rem;
   color: #e5e7eb;    /* header text color */
 }
-
 
 .main-nav a {
   margin-left: 18px;
@@ -125,7 +123,8 @@ a {
   gap: 16px;
 }
 
-.stat-card, .flow-card {
+.stat-card,
+.flow-card {
   background-color: #020617;
   color: #e5e7eb;
   padding: 18px;
@@ -385,6 +384,35 @@ textarea {
   color: #166534;
 }
 
+/* ============================
+   NEW: CTA SECTION UNDER HERO
+   ============================ */
+
+.cta-section {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta-section .section-title {
+  margin-bottom: 8px;
+}
+
+.cta-section p {
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 1rem;
+  color: #475569;
+}
+
+.cta-buttons {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
 /* Responsive tweaks */
 @media (max-width: 768px) {
   .hero-inner {
@@ -399,5 +427,10 @@ textarea {
 
   .main-nav {
     display: none;
+  }
+
+  /* Make sure CTA section has nice breathing room on mobile */
+  .cta-section {
+    padding: 0 8px;
   }
 }
