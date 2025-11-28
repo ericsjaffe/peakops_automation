@@ -79,4 +79,56 @@ Sitemap: https://peakops.club/sitemap.xml
 
 @app.route("/")
 def index():
-    return render_template_
+    return render_template("index.html")
+
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+
+@app.route("/services")
+def services():
+    return render_template("services.html")
+
+
+@app.route("/pricing")
+def pricing():
+    return render_template("pricing.html")
+
+
+@app.route("/results")
+def results():
+    return render_template("results.html")
+
+
+@app.route("/self-assessment")
+def self_assessment():
+    return render_template("self_assessment.html")
+
+
+@app.route("/contact", methods=["GET", "POST"])
+def contact():
+    if request.method == "POST":
+        form_data = {
+            "name": request.form.get("name", "").strip(),
+            "email": request.form.get("email", "").strip(),
+            "company": request.form.get("company", "").strip(),
+            "role": request.form.get("role", "").strip(),
+            "improvements": request.form.get("improvements", "").strip(),
+            "current_process": request.form.get("current_process", "").strip(),
+            "budget": request.form.get("budget", "").strip(),
+        }
+
+        # Log to Google Sheets (and trigger email via Apps Script)
+        log_to_google_sheets(form_data)
+
+        flash("Thanks, your message has been received. We'll get back to you shortly.", "success")
+        return redirect(url_for("contact"))
+
+    return render_template("contact.html")
+
+
+if __name__ == "__main__":
+    # In production (Render), a WSGI server like gunicorn will run the app instead.
+    app.run(host="0.0.0.0", port=5000)
