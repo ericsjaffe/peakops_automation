@@ -7,7 +7,10 @@ app.secret_key = os.environ.get("FLASK_SECRET_KEY", "change-this-secret-key")
 
 
 def log_to_google_sheets(form_data: dict) -> None:
-    """POST the form data to a Google Apps Script Web App that writes to a Sheet and sends an email."""
+    """
+    POST the form data to a Google Apps Script Web App that writes to a Sheet
+    and sends an email.
+    """
     url = os.environ.get("G_SHEETS_WEBHOOK_URL")
     if not url:
         app.logger.warning("G_SHEETS_WEBHOOK_URL not set; skipping Google Sheets logging.")
@@ -32,15 +35,21 @@ def add_security_headers(response):
     return response
 
 
-@app.route("/health")
+@app.route("/health", methods=["GET"])
 def health():
     """Simple health-check endpoint for uptime monitoring / Render probes."""
     return {"status": "ok"}, 200
 
 
-@app.route("/sitemap.xml")
+@app.route("/sitemap.xml", methods=["GET"])
 def sitemap_xml() -> Response:
-    """XML sitemap used by search engines."""
+    """
+    XML sitemap used by search engines.
+
+    IMPORTANT:
+    - Served with Content-Type: application/xml so Google can parse it.
+    - This must be the ONLY /sitemap.xml route in this file.
+    """
     pages = [
         "https://peakops.club/",
         "https://peakops.club/services",
@@ -63,11 +72,11 @@ def sitemap_xml() -> Response:
 
     xml_lines.append("</urlset>")
 
-    sitemap_xml = "\n".join(xml_lines)
-    return Response(sitemap_xml, mimetype="application/xml")
+    sitemap_body = "\n".join(xml_lines)
+    return Response(sitemap_body, mimetype="application/xml")
 
 
-@app.route("/robots.txt")
+@app.route("/robots.txt", methods=["GET"])
 def robots_txt() -> Response:
     content = """User-agent: *
 Allow: /
@@ -131,4 +140,4 @@ def contact():
 
 if __name__ == "__main__":
     # In production (Render), a WSGI server like gunicorn will run the app instead.
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=5000, debug=True)
