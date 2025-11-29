@@ -124,7 +124,7 @@ def workflow_checklist():
         log_to_google_sheets({"email": email, "source": "Workflow Checklist"})
 
         # Redirect to the downloadable PDF
-        return redirect("/static/downloads/Workflow_Audit_Checklist.pdf")
+        return redirect("/static/pdfs/workflow-audit-checklist.pdf")
 
     return render_template("workflow_checklist.html")
 
