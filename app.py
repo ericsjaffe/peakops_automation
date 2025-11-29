@@ -128,6 +128,17 @@ def workflow_checklist():
 
     return render_template("workflow_checklist.html")
 
+@app.route("/automation-guide", methods=["GET", "POST"])
+def automation_guide():
+    if request.method == "POST":
+        email = request.form.get("email")
+
+        log_to_google_sheets({"email": email, "source": "Automation Guide"})
+
+        return redirect("/static/downloads/Top_10_Automations_Guide.pdf")
+
+    return render_template("automation_guide.html")
+
 
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
