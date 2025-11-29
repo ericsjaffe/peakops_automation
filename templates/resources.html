@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}Resources & Free Downloads | PeakOps Automation{% endblock %}
+{% block meta_description %}
+Browse free workflow and automation resources from PeakOps Automation, including checklists and guides for busy teams.
+{% endblock %}
+
+{% block content %}
+<section class="hero hero-internal">
+  <div class="container hero-inner narrow">
+    <div class="hero-content center">
+      <h1>Resources &amp; Free Downloads</h1>
+      <p class="hero-sub lead-large">
+        Practical checklists, guides, and templates to help you find bottlenecks, automate repetitive work,
+        and improve your team’s day-to-day workflows.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="resource-grid">
+
+      <article class="resource-card">
+        <h2>Workflow Audit Checklist</h2>
+        <p>A simple, high-impact checklist to uncover bottlenecks, repetitive tasks, and automation-ready workflows.</p>
+        <ul>
+          <li>Identify where time is being wasted</li>
+          <li>Score workflows by automation readiness</li>
+          <li>Perfect first step before a project</li>
+        </ul>
+        <a href="{{ url_for('workflow_checklist') }}" class="btn btn-primary btn-full">
+          Get the Checklist
+        </a>
+      </article>
+
+      <article class="resource-card">
+        <h2>Top 10 Automations for Small Teams</h2>
+        <p>Ten practical automation ideas that can be implemented with tools like Excel, Sheets, Zapier, and simple scripts.</p>
+        <ul>
+          <li>Real-world examples</li>
+          <li>Time-saving estimates</li>
+          <li>Links to recommended tools</li>
+        </ul>
+        <a href="{{ url_for('top_10_automations') }}" class="btn btn-secondary btn-full">
+          Get the Guide
+        </a>
+      </article>
+
+      <article class="resource-card">
+        <h2>Automation Playbook (Coming Soon)</h2>
+        <p>A deeper playbook on mapping workflows, choosing the right tools, and rolling out automations across your team.</p>
+        <ul>
+          <li>Step-by-step framework</li>
+          <li>Sample diagrams and templates</li>
+          <li>Rollout and change-management tips</li>
+        </ul>
+        <a href="{{ url_for('automation_guide') }}" class="btn btn-secondary btn-full">
+          Join the Early Access List
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+{% endblock %}
