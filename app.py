@@ -200,18 +200,19 @@ def top_10_automations_download():
 @app.route("/automation-guide", methods=["GET", "POST"])
 def automation_guide():
     if request.method == "POST":
-        email = (request.form.get("email") or "").strip()
+        email = request.form.get("email")
 
-        if not email:
-            flash("Please enter a valid email address.", "error")
-            return redirect(url_for("automation_guide"))
+        # Log email + source to Google Sheets
+        log_to_google_sheets({
+            "email": email,
+            "source": "Automation Guide"
+        })
 
-        log_to_google_sheets({"email": email, "source": "Automation Playbook Early Access"})
-
-        flash("Thanks! I’ll send you the Automation Playbook as soon as it’s ready.", "success")
-        return redirect(url_for("automation_guide"))
+        # Redirect to the new PDF file
+        return redirect("/static/pdfs/top-10-automations-small-teams.pdf")
 
     return render_template("automation_guide.html")
+
 
 
 @app.route("/contact", methods=["GET", "POST"])
