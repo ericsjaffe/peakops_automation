@@ -115,6 +115,19 @@ def results():
 def self_assessment():
     return render_template("self_assessment.html")
 
+@app.route("/workflow-checklist", methods=["GET", "POST"])
+def workflow_checklist():
+    if request.method == "POST":
+        email = request.form.get("email")
+
+        # Log to Google Sheets webhook (you already have this function)
+        log_to_google_sheets({"email": email, "source": "Workflow Checklist"})
+
+        # Redirect to the downloadable PDF
+        return redirect("/static/downloads/Workflow_Audit_Checklist.pdf")
+
+    return render_template("workflow_checklist.html")
+
 
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
