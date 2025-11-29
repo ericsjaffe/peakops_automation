@@ -140,19 +140,22 @@ def resources():
 @app.route("/workflow-checklist", methods=["GET", "POST"])
 def workflow_checklist():
     if request.method == "POST":
-        email = (request.form.get("email") or "").strip()
+        email = request.form.get("email")
 
-        if not email:
-            flash("Please enter a valid email address.", "error")
-            return redirect(url_for("workflow_checklist"))
+        # Log email to Google Sheets
+        log_to_google_sheets({
+            "email": email,
+            "source": "Workflow Checklist"
+        })
 
-        # Log to Google Sheets webhook (optional but you already have this function)
-        log_to_google_sheets({"email": email, "source": "Workflow Checklist"})
+        # Flash success message
+        flash("Thanks! Your checklist is downloading now.", "success")
 
-        # Redirect to a clean download route
-        return redirect(url_for("workflow_checklist_download"))
+        # Redirect back to the same page with ?download=1
+        return redirect(url_for("workflow_checklist", download="1"))
 
     return render_template("workflow_checklist.html")
+
 
 
 @app.route("/workflow-checklist/download")
@@ -202,16 +205,20 @@ def automation_guide():
     if request.method == "POST":
         email = request.form.get("email")
 
-        # Log email + source to Google Sheets
+        # Log email to Google Sheets
         log_to_google_sheets({
             "email": email,
             "source": "Automation Guide"
         })
 
-        # Redirect to the new PDF file
-        return redirect("/static/pdfs/top-10-automations-small-teams.pdf")
+        # Flash success message
+        flash("Thanks for downloading the Automation Playbook!", "success")
+
+        # Redirect back to same page with ?download=1
+        return redirect(url_for("automation_guide", download="1"))
 
     return render_template("automation_guide.html")
+
 
 
 
