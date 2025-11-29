@@ -56,5 +56,22 @@ Download the free guide with the top 10 automations that save small teams hours 
   </div>
 </section>
 
+{# ------------- STEP 2: AUTO-DOWNLOAD SCRIPT (ADD THIS BELOW) ------------- #}
+{% if request.args.get("download") == "1" %}
+<script>
+  window.onload = function () {
+    const link = document.createElement('a');
+
+    // PDF file for the Automation Guide
+    link.href = "/static/pdfs/top-10-automations-small-teams.pdf";
+
+    link.download = "";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+</script>
+{% endif %}
+{# ------------------------------------------------------------------------ #}
+
 {% endblock %}
-d
