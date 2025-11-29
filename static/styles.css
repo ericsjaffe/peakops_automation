@@ -203,6 +203,7 @@ a {
   padding: 56px 0;
 }
 
+/* NOTE: your HTML uses .section-alt, so this is separate */
 .section.alt {
   background-color: #e5f0ff;
 }
@@ -231,6 +232,10 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
+/* ============================
+   CARDS (GLOBAL)
+   ============================ */
+
 .card {
   background-color: #ffffff;
   border-radius: 16px;
@@ -254,6 +259,54 @@ a {
   margin-top: 16px;
   font-size: 0.95rem;
   color: #64748b;
+}
+
+/* ============================
+   QUICK-START OFFERS (NEW)
+   ============================ */
+
+/* 3-column layout on desktop */
+.offers-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* Make offer cards equal height with button pinned at bottom */
+.card-offer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-offer .card-header {
+  margin-bottom: 0.75rem;
+}
+
+.card-offer .card-body {
+  flex: 1 1 auto;
+}
+
+.card-offer .card-footer {
+  margin-top: 1.25rem;
+}
+
+/* Center footer content */
+.card-footer.center {
+  display: flex;
+  justify-content: center;
+}
+
+/* Button style for offers */
+.btn-offer {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;          /* full width within card */
+  max-width: 280px;     /* not too wide on large screens */
+  padding-inline: 1.75rem;
+  text-align: center;
+  white-space: normal;  /* allow wrapping on smaller screens */
 }
 
 /* ============================
@@ -287,7 +340,7 @@ a {
 }
 
 /* ============================
-   PRICING PREVIEW
+   PRICING PREVIEW (HOME)
    ============================ */
 
 .pricing-preview {
@@ -302,6 +355,12 @@ a {
   padding: 18px 18px 22px;
   border-radius: 16px;
   box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05);
+}
+
+/* Make pricing cards flexible for full pricing page too */
+.pricing-card {
+  display: flex;
+  flex-direction: column;
 }
 
 .pricing-card .price {
@@ -325,6 +384,16 @@ a {
 .pricing-card.featured {
   border: 1px solid #2563eb;
   box-shadow: 0 16px 36px rgba(37, 99, 235, 0.18);
+}
+
+/* ============================
+   PRICING GRID (PRICING PAGE)  NEW
+   ============================ */
+
+.pricing-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 /* ============================
@@ -571,6 +640,21 @@ textarea {
 /* ============================
    RESPONSIVE TWEAKS
    ============================ */
+
+/* Grid responsiveness for offers & pricing */
+@media (max-width: 1024px) {
+  .offers-grid,
+  .pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .offers-grid,
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 @media (max-width: 900px) {
   .hero-inner {
