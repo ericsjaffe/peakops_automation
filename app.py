@@ -1,4 +1,13 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, Response
+from flask import (
+    Flask,
+    render_template,
+    request,
+    redirect,
+    url_for,
+    flash,
+    Response,
+    send_from_directory,
+)
 import os
 import requests
 
@@ -58,6 +67,10 @@ def sitemap_xml() -> Response:
         "https://peakops.club/contact",
         "https://peakops.club/results",
         "https://peakops.club/self-assessment",
+        "https://peakops.club/resources",
+        "https://peakops.club/workflow-checklist",
+        "https://peakops.club/top-10-automations",
+        "https://peakops.club/automation-guide",
     ]
 
     xml_lines = ['<?xml version="1.0" encoding="UTF-8"?>']
@@ -115,27 +128,88 @@ def results():
 def self_assessment():
     return render_template("self_assessment.html")
 
+
+@app.route("/resources")
+def resources():
+    return render_template("resources.html")
+
+
+# ========= Workflow Audit Checklist =========
+
+
 @app.route("/workflow-checklist", methods=["GET", "POST"])
 def workflow_checklist():
     if request.method == "POST":
-        email = request.form.get("email")
+        email = (request.form.get("email") or "").strip()
 
-        # Log to Google Sheets webhook (you already have this function)
+        if not email:
+            flash("Please enter a valid email address.", "error")
+            return redirect(url_for("workflow_checklist"))
+
+        # Log to Google Sheets webhook (optional but you already have this function)
         log_to_google_sheets({"email": email, "source": "Workflow Checklist"})
 
-        # Redirect to the downloadable PDF
-        return redirect("/static/pdfs/workflow-audit-checklist.pdf")
+        # Redirect to a clean download route
+        return redirect(url_for("workflow_checklist_download"))
 
     return render_template("workflow_checklist.html")
+
+
+@app.route("/workflow-checklist/download")
+def workflow_checklist_download():
+    pdf_dir = os.path.join(app.root_path, "static", "pdfs")
+    return send_from_directory(
+        pdf_dir,
+        "workflow-audit-checklist.pdf",
+        as_attachment=True,
+    )
+
+
+# ========= Top 10 Automations for Small Teams =========
+
+
+@app.route("/top-10-automations", methods=["GET", "POST"])
+def top_10_automations():
+    if request.method == "POST":
+        email = (request.form.get("email") or "").strip()
+
+        if not email:
+            flash("Please enter a valid email address.", "error")
+            return redirect(url_for("top_10_automations"))
+
+        log_to_google_sheets({"email": email, "source": "Top 10 Automations Guide"})
+
+        return redirect(url_for("top_10_automations_download"))
+
+    return render_template("top_10_automations.html")
+
+
+@app.route("/top-10-automations/download")
+def top_10_automations_download():
+    pdf_dir = os.path.join(app.root_path, "static", "pdfs")
+    return send_from_directory(
+        pdf_dir,
+        "top-10-automations-small-teams.pdf",
+        as_attachment=True,
+    )
+
+
+# ========= Automation Guide / Playbook (Early Access) =========
+
 
 @app.route("/automation-guide", methods=["GET", "POST"])
 def automation_guide():
     if request.method == "POST":
-        email = request.form.get("email")
+        email = (request.form.get("email") or "").strip()
 
-        log_to_google_sheets({"email": email, "source": "Automation Guide"})
+        if not email:
+            flash("Please enter a valid email address.", "error")
+            return redirect(url_for("automation_guide"))
 
-        return redirect("/static/downloads/Top_10_Automations_Guide.pdf")
+        log_to_google_sheets({"email": email, "source": "Automation Playbook Early Access"})
+
+        flash("Thanks! I’ll send you the Automation Playbook as soon as it’s ready.", "success")
+        return redirect(url_for("automation_guide"))
 
     return render_template("automation_guide.html")
 
