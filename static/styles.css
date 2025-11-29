@@ -638,6 +638,58 @@ textarea {
 }
 
 /* ============================
+   WORKFLOW CHECKLIST LANDING
+   ============================ */
+
+/* Simpler internal hero (single column, centered) */
+.hero-internal {
+  background-color: #f8fafc;
+}
+
+.hero-simple {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Checklist main section */
+.checklist-section {
+  text-align: center;
+}
+
+/* Optional mockup image */
+.checklist-mockup {
+  max-width: 260px;
+  margin: 0 auto 20px;
+  display: block;
+}
+
+/* Intro text under image */
+.checklist-intro {
+  margin-top: 4px;
+  margin-bottom: 20px;
+}
+
+/* Form layout */
+.download-form {
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* Make the button span full width of the form */
+.btn-full {
+  width: 100%;
+  text-align: center;
+}
+
+/* Small tweak to note text */
+.checklist-note {
+  margin-top: 18px;
+}
+
+
+/* ============================
    RESPONSIVE TWEAKS
    ============================ */
 
