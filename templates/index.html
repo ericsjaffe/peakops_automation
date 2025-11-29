@@ -119,7 +119,7 @@ PeakOps Automation helps busy professionals and teams design better workflows, b
   </div>
 </section>
 
-{# NEW: Free Resources / Downloads section #}
+{# Free Resources / Downloads section wired to landing pages #}
 <section class="section">
   <div class="container">
     <h2 class="section-title">Free Resources &amp; Downloads</h2>
@@ -142,9 +142,8 @@ PeakOps Automation helps busy professionals and teams design better workflows, b
           <li>Prioritize what to fix first</li>
         </ul>
         <div class="center" style="margin-top: 12px;">
-          {# Update the href once you upload the PDF #}
-          <a href="/static/pdfs/workflow-audit-checklist.pdf" class="btn btn-secondary">
-            Download the Checklist
+          <a href="{{ url_for('workflow_checklist') }}" class="btn btn-secondary">
+            Get the Checklist
           </a>
         </div>
       </article>
@@ -162,9 +161,8 @@ PeakOps Automation helps busy professionals and teams design better workflows, b
           <li>Rough time-savings estimates</li>
         </ul>
         <div class="center" style="margin-top: 12px;">
-          {# Update the href once you upload the PDF #}
-          <a href="/static/pdfs/top-10-automations-small-teams.pdf" class="btn btn-secondary">
-            Download the Guide
+          <a href="{{ url_for('top_10_automations') }}" class="btn btn-secondary">
+            Get the Guide
           </a>
         </div>
       </article>
