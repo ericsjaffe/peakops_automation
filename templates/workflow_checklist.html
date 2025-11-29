@@ -20,7 +20,6 @@ Download the free Workflow Audit Checklist to uncover bottlenecks, wasted time, 
 <section class="section checklist-section">
   <div class="container narrow">
 
-    {# Optional mockup image – make sure this file exists in static/img #}
     <img
       src="/static/img/workflow-audit-checklist.png"
       alt="Workflow Audit Checklist Mockup"
@@ -57,5 +56,23 @@ Download the free Workflow Audit Checklist to uncover bottlenecks, wasted time, 
 
   </div>
 </section>
+
+{# ---------- STEP 2: AUTO-DOWNLOAD SCRIPT FOR WORKFLOW CHECKLIST ---------- #}
+{% if request.args.get("download") == "1" %}
+<script>
+  window.onload = function () {
+    const link = document.createElement('a');
+
+    // PDF file for the Workflow Checklist
+    link.href = "/static/pdfs/workflow-audit-checklist.pdf";
+
+    link.download = "";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+</script>
+{% endif %}
+{# ------------------------------------------------------------------------- #}
 
 {% endblock %}
