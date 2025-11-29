@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Free Workflow Audit Checklist | PeakOps Automation{% endblock %}
+{% block meta_description %}
+Download the free Workflow Audit Checklist to uncover bottlenecks, wasted time, and automation opportunities in your daily workflows.
+{% endblock %}
+
+{% block content %}
+<section class="hero hero-internal">
+  <div class="container hero-inner narrow">
+    <div class="hero-content center">
+      <h1>Free Workflow Audit Checklist</h1>
+      <p class="hero-sub">
+        A simple, high-impact checklist to help you uncover bottlenecks, eliminate repetitive work, 
+        and find automation-ready opportunities in your team.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container narrow center">
+
+    <img src="/static/img/checklist-mockup.png"
+         alt="Workflow Audit Checklist Mockup"
+         style="max-width: 300px; margin: 0 auto 20px; display: block;">
+
+    <p style="font-size: 1.1rem; color:#475569">
+      Enter your email below and I'll send the checklist instantly.
+    </p>
+
+    <form method="post" action="/workflow-checklist">
+      <div class="form-row">
+        <label>Your Email</label>
+        <input type="email" name="email" placeholder="you@company.com" required>
+      </div>
+
+      <div class="form-row">
+        <button type="submit" class="btn btn-primary btn-full">Get the Checklist</button>
+      </div>
+    </form>
+
+    <p class="note" style="margin-top:15px;">
+      Includes: workflow mapping basics, bottleneck signals, repetitive-task indicators, and automation readiness scoring.
+    </p>
+
+  </div>
+</section>
+
+{% endblock %}
