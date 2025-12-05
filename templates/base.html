@@ -139,6 +139,15 @@
 
   <footer class="site-footer">
     <div class="container">
+      {# Footer testimonial quote #}
+      <div class="footer-testimonial">
+        <p class="footer-quote">
+          "After PeakOps automated our pipeline, reports run in 5 minutes instead of 12 hours. 
+          We save 48 hours/month and handle 3x the volume."
+        </p>
+        <p class="footer-quote-author">— Jennifer Lee, Operations Manager</p>
+      </div>
+      
       <p>&copy; 2024 PeakOps Automation. All rights reserved.</p>
       <p>
         <a href="{{ url_for('index') }}">Home</a> |
@@ -175,3 +184,41 @@
   </script>
 </body>
 </html>
+  </div>
+  </footer>
+
+  <style>
+  .footer-testimonial {
+    background: rgba(37, 99, 235, 0.05);
+    padding: 24px;
+    border-radius: 12px;
+    border-left: 4px solid #2563eb;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .footer-quote {
+    font-style: italic;
+    color: #334155;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 12px 0;
+  }
+
+  .footer-quote-author {
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .footer-testimonial {
+      padding: 20px;
+    }
+    
+    .footer-quote {
+      font-size: 0.95rem;
+    }
+  }
+  </style>
