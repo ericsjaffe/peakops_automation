@@ -114,7 +114,6 @@
         <a href="{{ url_for('pricing') }}">Pricing</a>
         <a href="{{ url_for('about') }}">About</a>
         <a href="{{ url_for('results') }}">Results</a>
-        <a href="{{ url_for('faq') }}">FAQ</a>
         <a href="{{ url_for('workflow_checklist') }}">Resources</a>
         <a href="{{ url_for('self_assessment') }}" class="nav-cta">Self Assessment</a>
         <a href="https://calendly.com/peakops" class="nav-cta">Book a Call</a>
@@ -157,7 +156,7 @@
 
       if (toggle) {
         toggle.addEventListener('click', function() {
-          nav.classList.toggle('active');
+          nav.classList.toggle('is-open');
           const expanded = toggle.getAttribute('aria-expanded') === 'true';
           toggle.setAttribute('aria-expanded', !expanded);
         });
@@ -166,7 +165,7 @@
         const navLinks = nav.querySelectorAll('a');
         navLinks.forEach(link => {
           link.addEventListener('click', function() {
-            nav.classList.remove('active');
+            nav.classList.remove('is-open');
             toggle.setAttribute('aria-expanded', 'false');
           });
         });
