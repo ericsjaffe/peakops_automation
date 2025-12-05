@@ -66,12 +66,13 @@ a {
 .main-nav {
   display: flex;
   align-items: center;
+  gap: 24px;
 }
 
 .main-nav a {
-  margin-left: 18px;
   font-size: 0.95rem;
   opacity: 0.9;
+  white-space: nowrap;
 }
 
 .main-nav a:hover {
