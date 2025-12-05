@@ -1,109 +1,153 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
+{% extends "base.html" %}
 
-  {# Page-specific <title> with a solid default #}
-  <title>
-    {% block title %}
-      PeakOps Automation | Workflow Automation & Productivity Engineering
-    {% endblock %}
-  </title>
+{% block title %}
+About PeakOps Automation | Workflow Automation & Productivity Engineering
+{% endblock %}
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+{% block meta_description %}
+Learn about PeakOps Automation and how we help busy professionals and teams streamline workflows, reduce manual work, and build sustainable automation solutions.
+{% endblock %}
 
-  {# Default meta description; pages can override if they want #}
-  <meta name="description"
-        content="{% block meta_description %}PeakOps Automation helps busy professionals and teams streamline workflows, build custom automations, and save hours every week on recurring work.{% endblock %}">
+{% block extra_meta %}
+  <!-- Canonical -->
+  <link rel="canonical" href="https://peakops.club/about">
+  <meta name="robots" content="index, follow">
 
-  {# Core stylesheet #}
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PeakOps Automation">
+  <meta property="og:title" content="About PeakOps Automation | Workflow Automation & Productivity Engineering">
+  <meta property="og:description" content="Learn about PeakOps Automation and our approach to process improvement and workflow automation.">
+  <meta property="og:url" content="https://peakops.club/about">
+  <meta property="og:image" content="https://peakops.club/static/img/peakops-social-card.png">
 
-  <!-- Favicon & app icons -->
-  <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/peakops_favicon_64.png') }}">
-  <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/apple-touch-icon.png') }}">
-  <link rel="apple-touch-icon-precomposed" href="{{ url_for('static', filename='img/apple-touch-icon.png') }}">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About PeakOps Automation">
+  <meta name="twitter:description" content="Learn about PeakOps Automation and our approach to process improvement.">
+  <meta name="twitter:image" content="https://peakops.club/static/img/peakops-social-card.png">
 
-  {# Extra per-page SEO: canonical, OG, Twitter, JSON-LD, etc. #}
-  {% block extra_meta %}{% endblock %}
-
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CW2QXQLK08"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-CW2QXQLK08');
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "PeakOps Automation",
+    "url": "https://peakops.club/about",
+    "founder": {
+      "@type": "Person",
+      "name": "Eric Jaffe"
+    },
+    "description": "PeakOps Automation helps busy professionals and teams streamline workflows, reduce manual work, and build sustainable automation solutions."
+  }
   </script>
-</head>
 
-<body>
-  <header class="site-header">
-    <div class="container nav-container">
-      <div class="logo">
-        <a href="{{ url_for('index') }}" class="brand">
-          <img
-            src="{{ url_for('static', filename='img/peakops-logo.png') }}"
-            alt="PeakOps Automation logo"
-            class="brand-logo"
-          >
-          <span class="brand-text">PeakOps<br>Automation</span>
-        </a>
-      </div>
-
-      {# Mobile nav toggle button #}
-      <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-      </button>
-
-      <nav class="main-nav">
-        <a href="{{ url_for('index') }}">Home</a>
-        <a href="{{ url_for('services') }}">Services</a>
-        <a href="{{ url_for('pricing') }}">Pricing</a>
-        <a href="{{ url_for('about') }}">About</a>
-        <a href="{{ url_for('results') }}">Results</a>
-        <a href="{{ url_for('self_assessment') }}" class="nav-cta">Self Assessment</a>
-        <a href="https://calendly.com/peakops" class="nav-cta">Book a Call</a>
-        <a href="{{ url_for('contact') }}" class="nav-cta">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-        <div class="flash-wrapper container">
-          {% for category, message in messages %}
-            <div class="flash flash-{{ category }}">{{ message }}</div>
-          {% endfor %}
-        </div>
-      {% endif %}
-    {% endwith %}
-
-    {% block content %}{% endblock %}
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© 2025 PeakOps Automation. All rights reserved.</p>
-      <p class="tagline">Your productivity engineers for modern teams.</p>
-    </div>
-  </footer>
-
-  {# Simple mobile nav toggle script #}
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var toggle = document.querySelector('.nav-toggle');
-      var nav = document.querySelector('.main-nav');
-
-      if (toggle && nav) {
-        toggle.addEventListener('click', function () {
-          var isOpen = nav.classList.toggle('is-open');
-          toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        });
+  <!-- Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://peakops.club/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About",
+        "item": "https://peakops.club/about"
       }
-    });
+    ]
+  }
   </script>
-</body>
-</html>
+{% endblock %}
+
+{% block content %}
+
+<section class="hero hero-internal">
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <h1>About PeakOps Automation</h1>
+      <p class="hero-sub">
+        We help busy professionals and teams design better workflows, eliminate manual work,
+        and build automation solutions that scale without burnout.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container narrow">
+    <h2>Our Philosophy</h2>
+    <p class="lead">
+      Most teams are wasting hours every week on work that could be automated or streamlined.
+      Not because they're inefficient — but because no one has time to step back and fix the workflow.
+    </p>
+    <p>
+      That's where PeakOps comes in. We specialize in finding those opportunities, designing better processes,
+      and building the small automations that quietly save hours every month. We focus on what actually works
+      in the real world — not perfect solutions that never get used.
+    </p>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container">
+    <h2 class="section-title">What We Do</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <h3>Process Improvement</h3>
+        <p>
+          We map your workflows, identify bottlenecks, and redesign processes so they're cleaner,
+          faster, and easier for your team to follow.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Custom Automation</h3>
+        <p>
+          From Excel macros to Python scripts to dashboards, we build solutions that fit into
+          your existing stack and actually get used.
+        </p>
+      </div>
+      <div class="card">
+        <h3>Productivity Engineering</h3>
+        <p>
+          We think like engineers about your operations. Small, repeatable systems that reduce
+          friction and let your team focus on high-value work.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container narrow">
+    <h2>Why We're Different</h2>
+    <ul>
+      <li><strong>No unnecessary complexity.</strong> We build solutions that are easy to understand and maintain.</li>
+      <li><strong>Real-world focus.</strong> We care about what actually improves your day-to-day, not what looks impressive in a slide deck.</li>
+      <li><strong>Fast results.</strong> Most clients see tangible time savings within 30–60 days.</li>
+      <li><strong>Your tools first.</strong> We work with Excel, Sheets, Python, dashboards, and your existing tech stack — not forcing you to adopt new platforms.</li>
+      <li><strong>Sustainable growth.</strong> We help you scale without hiring more people or burning out your team.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container cta-section">
+    <h2>Ready to Streamline Your Team's Workflow?</h2>
+    <p>
+      Start with a free 15-minute workflow audit or take our self-assessment
+      to discover where you're wasting the most time.
+    </p>
+    <div class="cta-buttons">
+      <a href="https://calendly.com/peakops" class="btn btn-primary">Book a Free Call</a>
+      <a href="{{ url_for('self_assessment') }}" class="btn btn-secondary">Take the Self-Assessment</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

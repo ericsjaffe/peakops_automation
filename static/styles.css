@@ -204,7 +204,8 @@ a {
 }
 
 /* NOTE: your HTML uses .section-alt, so this is separate */
-.section.alt {
+.section.alt,
+.section-alt {
   background-color: #e5f0ff;
 }
 
@@ -768,5 +769,141 @@ textarea {
   .stats-grid .stat-card,
   .testimonials-grid .testimonial {
     padding: 18px;
+  }
+}
+
+/* ============================
+   ENHANCED TYPOGRAPHY
+   ============================ */
+body {
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.2rem; }
+
+p { margin: 0.75em 0; }
+
+/* ============================
+   ENHANCED NARROW/ABOUT
+   ============================ */
+.narrow {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.narrow ul {
+  padding-left: 24px;
+}
+
+.narrow ul li {
+  margin-bottom: 12px;
+  line-height: 1.8;
+}
+
+/* ============================
+   SECTION-ALT CONSISTENCY
+   ============================ */
+.section-alt {
+  background-color: #e5f0ff;
+}
+
+/* ============================
+   RESPONSIVE ENHANCEMENTS: 480px
+   ============================ */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 12px;
+  }
+
+  h1 { font-size: 1.5rem; }
+  h2 { font-size: 1.15rem; }
+  h3 { font-size: 1.05rem; }
+
+  .hero h1 {
+    font-size: 1.35rem;
+  }
+
+  .section {
+    padding: 32px 0;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+    margin-bottom: 18px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .grid-4,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+
+  .btn-full {
+    width: 100%;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+  }
+
+  .pricing-preview {
+    grid-template-columns: 1fr;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  .hero-bullets {
+    flex-direction: column;
+  }
+
+  .hero-bullets li {
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+
+  .hero-cta .btn + .btn {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+
+  .form-row label {
+    font-size: 0.85rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  select,
+  textarea {
+    font-size: 16px;
+  }
+
+  .main-nav a {
+    font-size: 0.9rem;
+  }
+
+  .narrow ul {
+    padding-left: 18px;
   }
 }
