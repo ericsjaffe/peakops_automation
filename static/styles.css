@@ -280,6 +280,25 @@ a {
   height: 100%;
 }
 
+.card-offer.card-featured {
+  border: 2px solid #2563eb;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.15);
+  position: relative;
+}
+
+.card-offer .badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
 .card-offer .card-header {
   margin-bottom: 0.75rem;
 }
