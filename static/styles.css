@@ -50,7 +50,7 @@ a {
 }
 
 .brand-logo {
-  height: 60px;      /* controls how big the logo appears */
+  height: 80px;      /* controls how big the logo appears */
   width: auto;
   display: block;
 }
