@@ -28,6 +28,95 @@ limiter = Limiter(
 # Email validation regex
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')
 
+
+# SEO Context for all pages
+SEO_CONTEXT = {
+    'index': {
+        'title': 'PeakOps Automation | Workflow Automation & Productivity Engineering',
+        'meta_description': 'Streamline workflows with AI-powered automation. Save hours every week on recurring tasks. Expert workflow optimization for busy professionals.',
+        'og_title': 'PeakOps Automation | Workflow Automation & Productivity',
+        'og_description': 'Transform your workflow. Save hours every week with custom automation solutions.',
+        'canonical': '/',
+    },
+    'about': {
+        'title': 'About PeakOps Automation | Our Mission & Expertise',
+        'meta_description': 'Learn how PeakOps helps businesses automate workflows and increase productivity. Discover our automation expertise and proven methodology.',
+        'og_title': 'About PeakOps Automation',
+        'og_description': 'Discover how we help professionals work smarter, not harder through automation.',
+        'canonical': '/about',
+    },
+    'services': {
+        'title': 'Automation Services | Workflow & Process Automation Solutions',
+        'meta_description': 'Custom automation services including RPA, workflow optimization, data automation, and integration. Tailored solutions for your business.',
+        'og_title': 'Automation Services | PeakOps',
+        'og_description': 'Transform your business with custom automation solutions.',
+        'canonical': '/services',
+    },
+    'pricing': {
+        'title': 'Pricing | Automation Services | Flexible Plans',
+        'meta_description': 'Affordable automation pricing plans. Monthly retainers, project-based, and enterprise solutions. Find the right plan for your business.',
+        'og_title': 'Pricing | PeakOps Automation',
+        'og_description': 'Flexible pricing for automation services that fit your budget.',
+        'canonical': '/pricing',
+    },
+    'results': {
+        'title': 'Results & Case Studies | Automation Success Stories',
+        'meta_description': 'See real results from our automation projects. Client testimonials, metrics, and success stories. Proven ROI from workflow automation.',
+        'og_title': 'Results & Case Studies | PeakOps',
+        'og_description': 'Proven automation results. See how we help clients save time and money.',
+        'canonical': '/results',
+    },
+    'faq': {
+        'title': 'FAQ | Automation Questions & Answers',
+        'meta_description': 'Frequently asked questions about workflow automation, RPA, and productivity solutions. Get answers to common automation concerns.',
+        'og_title': 'FAQ | PeakOps Automation',
+        'og_description': 'Common questions about automation answered by experts.',
+        'canonical': '/faq',
+    },
+    'contact': {
+        'title': 'Contact Us | Get Your Automation Started',
+        'meta_description': 'Contact PeakOps Automation. Book a consultation to discuss your workflow automation needs and get started today.',
+        'og_title': 'Contact PeakOps | Schedule Your Automation Consultation',
+        'og_description': 'Ready to automate? Contact us for a free consultation.',
+        'canonical': '/contact',
+    },
+    'workflow_checklist': {
+        'title': 'Workflow Audit Checklist | Free Automation Assessment',
+        'meta_description': 'Free workflow audit checklist. Identify automation opportunities in your business process. Download our automation assessment tool.',
+        'og_title': 'Workflow Audit Checklist | Free Assessment',
+        'og_description': 'Identify automation opportunities with our free checklist.',
+        'canonical': '/workflow-checklist',
+    },
+    'top_10_automations': {
+        'title': 'Top 10 Automations for Small Teams | Free Guide',
+        'meta_description': 'Discover the top 10 automation opportunities for small teams. Free guide to improving productivity and saving time.',
+        'og_title': 'Top 10 Automations | Small Team Guide',
+        'og_description': 'The best automation opportunities for your team.',
+        'canonical': '/top-10-automations',
+    },
+    'automation_guide': {
+        'title': 'Automation Guide | How to Automate Your Workflows',
+        'meta_description': 'Complete guide to workflow automation. Learn automation best practices, tools, and strategies to optimize your business processes.',
+        'og_title': 'Automation Guide | Learn to Automate',
+        'og_description': 'Everything you need to know about workflow automation.',
+        'canonical': '/automation-guide',
+    },
+    'self_assessment': {
+        'title': 'Productivity Self-Assessment | Discover Your Potential',
+        'meta_description': 'Take our free productivity assessment. Discover your automation potential and get personalized recommendations.',
+        'og_title': 'Productivity Assessment | PeakOps',
+        'og_description': 'Assess your productivity potential.',
+        'canonical': '/self-assessment',
+    },
+    'resources': {
+        'title': 'Resources | Automation Tools & Learning Materials',
+        'meta_description': 'Free automation resources, tools, templates, and learning materials. Everything you need to get started with workflow automation.',
+        'og_title': 'Resources | PeakOps',
+        'og_description': 'Free automation resources and tools.',
+        'canonical': '/resources',
+    },
+}
+
 def is_valid_email(email):
     """Validate email address format."""
     return bool(EMAIL_REGEX.match(email.strip()))
@@ -125,23 +214,28 @@ Sitemap: https://peakops.club/sitemap.xml
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    seo = SEO_CONTEXT["index"]
+    return render_template("index.html", seo=seo)
 
 @app.route("/about")
 def about():
-    return render_template("about.html")
+    seo = SEO_CONTEXT["about"]
+    return render_template("about.html", seo=seo)
 
 @app.route("/services")
 def services():
-    return render_template("services.html")
+    seo = SEO_CONTEXT["services"]
+    return render_template("services.html", seo=seo)
 
 @app.route("/pricing")
 def pricing():
-    return render_template("pricing.html")
+    seo = SEO_CONTEXT["pricing"]
+    return render_template("pricing.html", seo=seo)
 
 @app.route("/results")
 def results():
-    return render_template("results.html")
+    seo = SEO_CONTEXT["results"]
+    return render_template("results.html", seo=seo)
 
 @app.route("/faq")
 def faq():
@@ -150,11 +244,13 @@ def faq():
 
 @app.route("/self-assessment")
 def self_assessment():
-    return render_template("self_assessment.html")
+    seo = SEO_CONTEXT["self_assessment"]
+    return render_template("self_assessment.html", seo=seo)
 
 @app.route("/resources")
 def resources():
-    return render_template("resources.html")
+    seo = SEO_CONTEXT["resources"]
+    return render_template("resources.html", seo=seo)
 
 # ========= Workflow Audit Checklist =========
 
