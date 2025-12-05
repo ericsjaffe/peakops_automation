@@ -4,3 +4,5 @@ feedparser
 requests
 gspread
 google-auth
+flask-limiter
+python-dotenv

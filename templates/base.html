@@ -27,6 +27,7 @@
   {# Extra per-page SEO: canonical, OG, Twitter, JSON-LD, etc. #}
   {% block extra_meta %}{% endblock %}
 
+
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CW2QXQLK08"></script>
   <script>
@@ -34,6 +35,31 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-CW2QXQLK08');
+
+    // Track CTA button clicks
+    document.addEventListener('DOMContentLoaded', function() {
+      // Track primary CTA clicks
+      const primaryCtaButtons = document.querySelectorAll('.btn-primary, .nav-cta');
+      primaryCtaButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+          gtag('event', 'cta_click', {
+            'button_text': this.textContent,
+            'button_class': this.className
+          });
+        });
+      });
+
+      // Track form submissions
+      const forms = document.querySelectorAll('form');
+      forms.forEach(form => {
+        form.addEventListener('submit', function() {
+          const formAction = this.action || 'unknown';
+          gtag('event', 'form_submit', {
+            'form_action': formAction
+          });
+        });
+      });
+    });
   </script>
 </head>
 
@@ -63,6 +89,8 @@
         <a href="{{ url_for('pricing') }}">Pricing</a>
         <a href="{{ url_for('about') }}">About</a>
         <a href="{{ url_for('results') }}">Results</a>
+        <a href="{{ url_for('faq') }}">FAQ</a>
+        <a href="{{ url_for('faq') }}">FAQ</a>
         <a href="{{ url_for('workflow_checklist') }}">Resources</a>
         <a href="{{ url_for('self_assessment') }}" class="nav-cta">Self Assessment</a>
         <a href="https://calendly.com/peakops" class="nav-cta">Book a Call</a>
@@ -91,6 +119,12 @@
       <p class="tagline">Your productivity engineers for modern teams.</p>
     </div>
   </footer>
+
+
+  <!-- Mobile Floating CTA Button -->
+  <a href="https://calendly.com/peakops" class="mobile-cta-float" target="_blank" rel="noopener noreferrer">
+    📞 Book a Call
+  </a>
 
   {# Simple mobile nav toggle script #}
   <script>

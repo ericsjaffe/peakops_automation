@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}Top 10 Automations Every Small Team Should Use | PeakOps Automation{% endblock %}
+{% block meta_description %}
+Download the free guide with the top 10 automations that save small teams hours each week. Includes examples, tools, and templates.
+{% endblock %}
+
+{% block content %}
+
+<section class="hero hero-internal">
+  <div class="container hero-simple center">
+    <h1>Top 10 Automations Every Small Team Should Use</h1>
+    <p class="hero-sub">
+      A practical guide with real automations you can implement without code — plus examples built with
+      Airtable, Sheets, Python, and Zapier/Make.
+    </p>
+  </div>
+</section>
+
+<section class="section checklist-section">
+  <div class="container narrow">
+
+    <img
+      src="/static/img/automation-guide-mockup.png"
+      alt="Top 10 Automations Guide PDF"
+      class="checklist-mockup"
+      loading="lazy"
+    >
+
+    <p class="lead center checklist-intro">
+      Enter your email and I'll send you the guide instantly.
+    </p>
+
+    <form method="post" action="/top-10-automations" class="download-form">
+      <div class="form-row">
+        <label for="email">Your Email</label>
+        <input
+          id="email"
+          type="email"
+          name="email"
+          required
+          placeholder="you@company.com"
+        >
+      </div>
+
+      <div class="form-row">
+        <button class="btn btn-primary btn-full" type="submit">
+          Send Me the Guide
+        </button>
+      </div>
+    </form>
+
+    <p class="note checklist-note">
+      Includes: workflow diagrams, tool recommendations, implementation checklists,
+      and time-saving calculations.
+    </p>
+
+  </div>
+</section>
+
+{% endblock %}

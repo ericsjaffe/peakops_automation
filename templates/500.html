@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Server Error | PeakOps Automation{% endblock %}
+{% block meta_description %}Something went wrong. We're working on it.{% endblock %}
+
+{% block content %}
+
+<section class="hero hero-internal">
+  <div class="container hero-inner">
+    <div class="hero-content center">
+      <h1 style="font-size: 3rem; color: #e74c3c;">500</h1>
+      <p class="hero-sub">Something Went Wrong</p>
+      <p>We're experiencing a temporary issue. Please try again later or contact support.</p>
+      <div class="cta-buttons" style="margin-top: 24px;">
+        <a href="{{ url_for('index') }}" class="btn btn-primary">Back to Home</a>
+        <a href="{{ url_for('contact') }}" class="btn btn-secondary">Report Issue</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

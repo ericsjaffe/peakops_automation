@@ -1,0 +1,279 @@
+{% extends "base.html" %}
+
+{% block title %}
+Frequently Asked Questions | PeakOps Automation
+{% endblock %}
+
+{% block meta_description %}
+Find answers to common questions about workflow automation, pricing, and how PeakOps Automation works with your team.
+{% endblock %}
+
+{% block extra_meta %}
+  <!-- Canonical -->
+  <link rel="canonical" href="https://peakops.club/faq">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PeakOps Automation">
+  <meta property="og:title" content="Frequently Asked Questions | PeakOps Automation">
+  <meta property="og:description" content="Find answers to common questions about workflow automation and PeakOps services.">
+  <meta property="og:url" content="https://peakops.club/faq">
+  <meta property="og:image" content="https://peakops.club/static/img/peakops-social-card.png">
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long do automation projects typically take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most quick-win automations take 1–4 weeks. Larger projects can take 6–12 weeks depending on complexity and scope. We'll give you a clear timeline upfront."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if we already use some automation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We assess your current setup and build on what works. Often we can improve existing automations, connect them better, or consolidate tools."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you work with our specific tools?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We're tool-agnostic and work with Excel, Google Sheets, Python, Zapier, Make, Airtable, and most SaaS platforms. We prioritize what fits your existing stack."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do we need technical skills to use the automations you build?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. We build solutions specifically for non-technical users. Automations run in the background, and we provide simple documentation on how to use them."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's your typical engagement model?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We offer both one-time projects and ongoing monthly support. Start with a free workflow audit, then choose a package that fits your needs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you work with remote teams?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. Most of our clients are remote or distributed. We work via video calls, Slack, and shared documentation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if an automation breaks or needs updates?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Included in our support plans. For one-time projects, we provide a 30-day bug fix guarantee. Ongoing support plans include priority maintenance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much do automations typically cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "One-time projects range from $250–$5,000+. Monthly support plans start at $199. We provide a clear estimate before any work begins."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://peakops.club/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "FAQ",
+        "item": "https://peakops.club/faq"
+      }
+    ]
+  }
+  </script>
+{% endblock %}
+
+{% block content %}
+
+<section class="hero hero-internal">
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <h1>Frequently Asked Questions</h1>
+      <p class="hero-sub">
+        Answers to common questions about workflow automation, pricing, and how PeakOps Automation works.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container narrow">
+    <div class="faq-container">
+      
+      <div class="faq-item">
+        <button class="faq-toggle" type="button">
+          <h3>How long do automation projects typically take?</h3>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Most quick-win automations take 1–4 weeks. Larger, more complex projects can take 6–12 weeks depending on scope and integration requirements.
+            We'll provide a clear timeline upfront during the scoping conversation.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-toggle" type="button">
+          <h3>What if we already use some automation?</h3>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            We assess your current setup and build on what already works. Often we can improve existing automations, connect them better, or consolidate multiple tools into a single solution.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-toggle" type="button">
+          <h3>Can you work with our specific tools?</h3>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Yes. We're tool-agnostic and have experience with Excel, Google Sheets, Python, Zapier, Make, Airtable, and most SaaS platforms.
+            We always prioritize what fits your existing tech stack rather than forcing you to adopt something new.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-toggle" type="button">
+          <h3>Do we need technical skills to use the automations you build?</h3>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            No. We build solutions specifically designed for non-technical users. Automations run in the background with minimal user interaction,
+            and we provide simple, clear documentation on how to use them.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-toggle" type="button">
+          <h3>What's your typical engagement model?</h3>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            We offer both one-time projects and ongoing monthly support. Start with a free workflow audit, then choose a monthly plan or a fixed-fee project
+            that fits your needs and budget.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-toggle" type="button">
+          <h3>Can you work with remote teams?</h3>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Absolutely. Most of our clients are remote or distributed across multiple locations. We work via video calls, Slack, email, and shared documentation.
+            Distance is not a barrier.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-toggle" type="button">
+          <h3>What if an automation breaks or needs updates?</h3>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            Included in our support plans. For one-time projects, we provide a 30-day bug fix guarantee at no additional cost. 
+            Ongoing support plans include priority maintenance and updates.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-toggle" type="button">
+          <h3>How much do automations typically cost?</h3>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>
+            One-time projects range from $250–$5,000+, depending on complexity. Monthly support plans start at $199. We always provide a clear, written estimate
+            before any work begins — no surprises.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="container cta-section">
+    <h2>Still have questions?</h2>
+    <p>Reach out — we're happy to chat about your specific workflow challenges.</p>
+    <div class="cta-buttons">
+      <a href="https://calendly.com/peakops" class="btn btn-primary">Book a Free Call</a>
+      <a href="{{ url_for('contact') }}" class="btn btn-secondary">Send a Message</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggles = document.querySelectorAll('.faq-toggle');
+    
+    toggles.forEach(toggle => {
+      toggle.addEventListener('click', function() {
+        const item = this.parentElement;
+        const isActive = item.classList.contains('active');
+        
+        // Close all other items
+        document.querySelectorAll('.faq-item.active').forEach(active => {
+          if (active !== item) {
+            active.classList.remove('active');
+          }
+        });
+        
+        // Toggle current item
+        item.classList.toggle('active');
+      });
+    });
+  });
+</script>
+
+{% endblock %}

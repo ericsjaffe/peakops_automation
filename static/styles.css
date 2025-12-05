@@ -907,3 +907,145 @@ p { margin: 0.75em 0; }
     padding-left: 18px;
   }
 }
+
+/* ============================
+   FAQ ACCORDION
+   ============================ */
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.faq-toggle {
+  width: 100%;
+  padding: 16px;
+  background: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  transition: background 0.2s ease;
+}
+
+.faq-toggle:hover {
+  background: #f8fafc;
+}
+
+.faq-toggle h3 {
+  text-align: left;
+  margin: 0;
+  font-size: 1.1rem;
+  flex: 1;
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #2563eb;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: #f9fafb;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 1000px;
+}
+
+.faq-answer p {
+  padding: 0 16px;
+  margin: 16px 0;
+  line-height: 1.7;
+}
+
+.faq-answer p:last-child {
+  padding-bottom: 16px;
+}
+
+/* ============================
+   MOBILE FLOATING CTA
+   ============================ */
+@media (max-width: 768px) {
+  .mobile-cta-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    left: 20px;
+    z-index: 999;
+    padding: 12px 18px;
+    background: linear-gradient(135deg, #2563eb, #22d3ee);
+    color: #ffffff;
+    border-radius: 999px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    animation: slideUp 0.3s ease-out;
+  }
+
+  .mobile-cta-float:hover {
+    box-shadow: 0 12px 32px rgba(37, 99, 235, 0.4);
+    text-decoration: none;
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+/* ============================
+   IMAGE OPTIMIZATION
+   ============================ */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+picture {
+  display: block;
+}
+
+/* Lazy loading image styles */
+img[loading="lazy"] {
+  background: #f0f0f0;
+}
+
+/* ============================
+   PERFORMANCE: Reduced motion
+   ============================ */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
