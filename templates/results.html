@@ -130,13 +130,18 @@ See real-world workflow automation projects, time saved, and testimonials from P
   </section>
 
   <!-- Featured Case Studies -->
-  <section class="section">
+  <section class="section" id="case-studies">
     <div class="container">
-      <h2 class="section-title">Featured Client Projects</h2>
-      <p class="section-intro center">
-        Here are a few examples of workflow automation and productivity engineering projects
-        we've delivered for clients.
-      </p>
+      <div class="section-header-with-cta">
+        <div>
+          <h2 class="section-title">Featured Client Projects</h2>
+          <p class="section-intro center">
+            Here are a few examples of workflow automation and productivity engineering projects
+            we've delivered for clients.
+          </p>
+        </div>
+        <a href="{{ url_for('case_study') }}" class="btn btn-primary">View Full Case Study</a>
+      </div>
 
       <div class="cards-grid">
         <!-- Case Study 1 -->
@@ -444,3 +449,33 @@ See real-world workflow automation projects, time saved, and testimonials from P
   </section>
 
 {% endblock %}
+
+<style>
+.section-header-with-cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  gap: 24px;
+}
+
+.section-header-with-cta > div {
+  flex: 1;
+}
+
+.section-header-with-cta .btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .section-header-with-cta {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .section-header-with-cta .btn {
+    width: 100%;
+  }
+}
+</style>
