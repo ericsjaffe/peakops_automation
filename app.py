@@ -237,6 +237,11 @@ def results():
     seo = SEO_CONTEXT["results"]
     return render_template("results.html", seo=seo)
 
+@app.route("/case-study")
+def case_study():
+    """Marketing agency lead automation case study with real metrics."""
+    return render_template("case_study.html")
+
 @app.route("/faq")
 def faq():
     """Frequently Asked Questions page."""
